@@ -17,7 +17,7 @@
 ## Installation
 
 ```console
-pip install ebo-app-factory
+pip install git+https://github.com/clivegross/ebo-app-factory.git
 ```
 
 ## Overview
