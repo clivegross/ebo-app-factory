@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ebo-app-factory"
+dynamic = ["version"]
+description = 'Mass produce EcoStruxure Building Operation applications, objects, graphics etc from templates, spreadsheets etc.'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Clive GROSS" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["openpyxl"]
+
+[project.optional-dependencies]
+dev = ["black"]
+
+[tool.hatch.envs.dev]
+dependencies = [
+    "black",
+]
+
+
+[project.urls]
+Documentation = "https://github.com/clivegross/ebo-app-factory#readme"
+Issues = "https://github.com/clivegross/ebo-app-factory/issues"
+Source = "https://github.com/clivegross/ebo-app-factory"
+
+[tool.hatch.version]
+path = "src/ebo_app_factory/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/ebo_app_factory tests}"
+
+[tool.coverage.run]
+source_pkgs = ["ebo_app_factory", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/ebo_app_factory/__about__.py",
+]
+
+[tool.coverage.paths]
+ebo_app_factory = ["src/ebo_app_factory", "*/ebo-app-factory/src/ebo_app_factory"]
+tests = ["tests", "*/ebo-app-factory/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

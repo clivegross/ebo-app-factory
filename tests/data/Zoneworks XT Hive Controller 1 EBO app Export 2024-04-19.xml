@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectSet ExportMode="Special" Note="TypesFirst" SemanticsFilter="Special" Version="4.0.1.86">
+  <MetaInformation>
+    <ExportMode Value="Special"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="4.0.1.86"/>
+    <SourceVersion Value="4.0.1.86"/>
+    <ServerFullPath Value="/iBAMS-ES01"/>
+  </MetaInformation>
+  <Types>
+    <ObjectType Name            = "udt.3fpzabulhtwedaq2gk46w4r3v4.yxcfwn34nj75xwaugaf6votn3bpmvki6"
+                DisplayName     = ""
+                Description     = ""
+                Base            = "script.Program"
+                Icon            = ""
+                Abstract        = "0"
+                Implements      = ""
+                DefaultProperty = ""
+                Version         = "1"
+                >
+      <PropertyTab Name = "BASIC">
+        <PropertyGroup Name = "STATUS">
+          <Parameter Name                  = "Complete"
+                     DisplayName           = "Compilation valid"
+                     Description           = "Tells if the program is complete and that it can be run by the server"
+                     Visibility            = "Summary"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="1"/>
+          </Parameter>
+          <Parameter Name                  = "CompilerVersion"
+                     DisplayName           = "Compiler version"
+                     Description           = "Compiler version"
+                     Visibility            = "Normal"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="1"/>
+          </Parameter>
+        </PropertyGroup>
+        <PropertyGroup Name = "CONFIGURATION">
+          <Parameter Name                  = "File"
+                     DisplayName           = "File"
+                     Description           = "Script Program file"
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="&lt;PEObject CompilationSuccess=&quot;true&quot; DateChanged=&quot;2460419.8014752544&quot; LineNumberDeclarationsEnd=&quot;25&quot; LineProgramEntry=&quot;0&quot; ProgramEntry=&quot;106&quot; ScriptCompilerVersion=&quot;1&quot; ScriptObjectType=&quot;1&quot; Version=&quot;1&quot;&gt;&#xA; &lt;Code Version=&quot;1&quot;&gt;Jz09PT09PT09PT09CicgYmluZCBpbiBmcm9tIGNsZXZlcnRyb25pY3MgU1FMIGRhdGEgcmVh&#xD;&#xA;ZGVyIGludGVyZmFjZQpzdHJpbmcgaW5wdXQgQ29udHJvbGxlcklQQWRkcmVzc19pbiAnIGNv&#xD;&#xA;bnRyb2xsZXIgSVAgYWRkcmVzcwpudW1lcmljIGlucHV0IENvbnRyb2xsZXJTdGF0dXNfaW4g&#xD;&#xA;J1tib29sXSBjb250cm9sbGVyIHN0YXR1cyAwID0gZmF1bHQsIDEgPSBvawpudW1lcmljIGlu&#xD;&#xA;cHV0IENvbnRyb2xsZXJDb21tc1N0YXR1c19pbiAnW2Jvb2xdIGNvbnRyb2xsZXIgY29tbXMg&#xD;&#xA;c3RhdHVzIDAgPSBmYXVsdCwgMSA9IG9rCm51bWVyaWMgaW5wdXQgQ29udHJvbGxlckNvbW1p&#xD;&#xA;c3Npb25lZF9pbiAnW2Jvb2xdIGNvbnRyb2xsZXIgY29tbWlzc2lvbmluZyBzdGF0dXMgMCA9&#xD;&#xA;IHVuY29tbWlzc2lvbmVkLCAxID0gb2sKbnVtZXJpYyBpbnB1dCBUb3RhbERldmljZXNCeUdh&#xD;&#xA;dGV3YXlfaW4gJ1tpbnRdIHRvdGFsIG51bWJlciBvZiBkZXZpY2VzIHdpdGggT2sgc3RhdHVz&#xD;&#xA;Cm51bWVyaWMgaW5wdXQgT2tEZXZpY2VzQnlHYXRld2F5X2luICdbaW50XSBudW1iZXIgb2Yg&#xD;&#xA;ZGV2aWNlcyB3aXRoIE9rIHN0YXR1cwonPT09PT09PT09PT0KJyBiaW5kIGluIGZyb20gRUJP&#xD;&#xA;IC0gQ2xldmVydHJvbmljcyBpbnRlcmZhY2Ugc3RhdHVzCm51bWVyaWMgaW5wdXQgSW50ZXJm&#xD;&#xA;YWNlU3RzICdbYm9vbF0gQ2xldmVydHJvbmljcyBTUUwgZGF0YSByZWFkZXIgaW50ZXJmYWNl&#xD;&#xA;IHN0YXR1cyAwPW9mZmxpbmUsIDE9b25saW5lCgonPT09PT09PT09PT09CicgYmluZCBvdXQg&#xD;&#xA;dG8gRUJPIGFwcGxpY2F0aW9uCnN0cmluZyBvdXRwdXQgSVBBZGRyZXNzICdbc3RyaW5nXSB0&#xD;&#xA;aGlzIGlzIHRoZSBQcmVzZXQgcHJlc2VudCB2YWx1ZSBpbmNvbWluZyBmcm9tIHRoZSBsaWdo&#xD;&#xA;dGluZyBjb250cm9sIHN5c3RlbSwgYm91bmQgaW50byB0aGUgRUJPIGFwcApudW1lcmljIG91&#xD;&#xA;dHB1dCBGbHQgJ1tpbnRdIDA9bm9ybWFsLCAxPWZhdWx0LCAyPXVua25vd24KbnVtZXJpYyBv&#xD;&#xA;dXRwdXQgQ29tbXNBbG0gJ1tpbnRdIDA9bm9ybWFsLCAxPWZhdWx0LCAyPXVua25vd24KbnVt&#xD;&#xA;ZXJpYyBvdXRwdXQgVW5jb21taXNzaW9uZWRBbG0gJ1tpbnRdIDA9bm9ybWFsLCAxPXVuY29t&#xD;&#xA;bWlzc2lvbmVkLCAyPXVua25vd24KbnVtZXJpYyBjYWxjX1N0cwpudW1lcmljIG91dHB1dCBT&#xD;&#xA;dHMgJ1tpbnRdIGV4dGVuZGVkIGNvbnRyb2xsZXIgc3RhdHVzIDA9bm9ybWFsLCAxPW9mZmxp&#xD;&#xA;bmUsIDI9dW5rbm93biwgMz1mYXVsdCwgND11bmNvbW1pc3Npb25lZCwgNz1mYXVsdGVkLHVu&#xD;&#xA;Y29tbWlzc2lvbmVkCm51bWVyaWMgb3V0cHV0IERldmljZVRvdGFsQ291bnQgJ1tpbnRdIG51&#xD;&#xA;bWJlciBvZiBkZXZpY2VzIHdpdGggT2sgc3RhdHVzCm51bWVyaWMgb3V0cHV0IERldmljZU9r&#xD;&#xA;Q291bnQgJ1tpbnRdIHRvdGFsIG51bWJlciBvZiBkZXZpY2VzIHdpdGggT2sgc3RhdHVzCgon&#xD;&#xA;IGNoZWNrIENsZXZlcnRyb25pY3MgaW50ZXJmYWNlIGlzIG9ubGluZSB0aGVuIHNldCBjb250&#xD;&#xA;cm9sbGVyIGNvbW1zIHN0YXR1cwppZiBub3QgSW50ZXJmYWNlU3RzIHRoZW4KIENvbW1zQWxt&#xD;&#xA;ID0gMiAndW5rbm93bgogU3RzID0gMiAndW5rbm93bgplbHNlCiBDb21tc0FsbSA9IG5vdCBD&#xD;&#xA;b250cm9sbGVyQ29tbXNTdGF0dXNfaW4gJyBpZiBDb250cm9sbGVyQ29tbXNTdGF0dXNfaW4g&#xD;&#xA;PSAwIGZhdWx0IHRoZW4gQ29tbXNBbG0gPSAxIGFsYXJtCiBJUEFkZHJlc3MgPSBDb250cm9s&#xD;&#xA;bGVySVBBZGRyZXNzX2luICcgb25seSBzZXQvdXBkYXRlIElQIGFkZHJlc3MgaWYgbm8gaW50&#xD;&#xA;ZXJmYWNlIGNvbW1zIGlzc3VlcwplbmRpZgonIGNoZWNrIGNvbnRyb2xsZXIgY29tbXMgYXJl&#xD;&#xA;IG9rIENsZXZlcnRyb25pY3MgaW50ZXJmYWNlIGlzIG9ubGluZSB0aGVuIHNldCBjb250cm9s&#xD;&#xA;bGVyIGNvbW1zIHN0YXR1cwppZiBDb21tc0FsbSA9IDAgdGhlbgogRmx0ID0gbm90IENvbnRy&#xD;&#xA;b2xsZXJTdGF0dXNfaW4gJyBpZiBDb250cm9sbGVyU3RhdHVzX2luID0gMCBmYXVsdCB0aGVu&#xD;&#xA;IEZsdCA9IDEgZmF1bHQKIFVuY29tbWlzc2lvbmVkQWxtID0gbm90IENvbnRyb2xsZXJDb21t&#xD;&#xA;aXNzaW9uZWRfaW4gJyBpZiBDb250cm9sbGVyQ29tbWlzc2lvbmVkX2luID0gMCB1bmNvbW1p&#xD;&#xA;c3Npb25lZCB0aGVuIFVuY29tbWlzc2lvbmVkQWxtID0gMSB1bmNvbW1pc3Npb25lZAogU3Rz&#xD;&#xA;ID0gRmx0KjMgKyBVbmNvbW1pc3Npb25lZEFsbSo0ICczPWZhdWx0LCA0PXVuY29tbWlzc2lv&#xD;&#xA;bmVkLCA3PWZhdWx0ZWQsdW5jb21taXNzaW9uZWQKZWxzZQogRmx0ID0gMiAndW5rbm93bgog&#xD;&#xA;VW5jb21taXNzaW9uZWRBbG0gPSAyICd1bmtub3duCmVuZGlmCmlmIENvbW1zQWxtID0gMiB0&#xD;&#xA;aGVuIFN0cyA9IDIgJ3Vua25vd24KCkRldmljZVRvdGFsQ291bnQgPSBUb3RhbERldmljZXNC&#xD;&#xA;eUdhdGV3YXlfaW4KRGV2aWNlT2tDb3VudCA9IE9rRGV2aWNlc0J5R2F0ZXdheV9pbgo=&lt;/Code&gt;&#xA; &lt;ByteCode Version=&quot;1&quot;&gt;Pj0QID+gD9I+OyA/oQ/SPjsgP6IP0j47ID+jD9I+OyA/pA/SPjsgP6UP0j47ID+mD9I+PRAh&#xD;&#xA;P6cP0j47IT+oD9I+OyE/qQ/SPjshP6oP0j47PwAA0j47IT+rD9I+OyE/rA/SPjshP60P0r4b&#xD;&#xA;AAAAfT+mD9KnQgAAAEA/qQ/Sp0IAAABAP6sP0sAUAAAA0qd9P6IPP6kP0qc/oA8/pw/SwdK+&#xD;&#xA;MQAAAGQ/qQ9CAAAAANKnfT+hDz+oD9KnfT+jDz+qD9KnVFg/qA9CAABAQFg/qg9CAACAQD+r&#xD;&#xA;D9LAFwAAANKnQgAAAEA/qA/Sp0IAAABAP6oP0sHSvQoAAABkP6kPQgAAAECnQgAAAEA/qw/S&#xD;&#xA;pz+kDz+sD9KnP6UPP60P0tM=&lt;/ByteCode&gt;&#xA; &lt;LocalVars Count=&quot;1&quot; Version=&quot;1&quot;&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;9&quot; Id=&quot;0&quot; Length=&quot;4&quot; LineNumber=&quot;19&quot; Name=&quot;calc_Sts&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;/LocalVars&gt;&#xA; &lt;BindingVars Count=&quot;14&quot; Version=&quot;1&quot;&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;14&quot; ComlType=&quot;2&quot; Id=&quot;4000&quot; Length=&quot;17&quot; LineNumber=&quot;3&quot; Name=&quot;ControllerIPAddress_in&quot; StringLength=&quot;17&quot; SubType=&quot;32&quot; Type=&quot;61&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;/&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;1&quot; Id=&quot;4001&quot; Length=&quot;4&quot; LineNumber=&quot;4&quot; Name=&quot;ControllerStatus_in&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;False&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;1&quot; Id=&quot;4002&quot; Length=&quot;4&quot; LineNumber=&quot;5&quot; Name=&quot;ControllerCommsStatus_in&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;False&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;1&quot; Id=&quot;4003&quot; Length=&quot;4&quot; LineNumber=&quot;6&quot; Name=&quot;ControllerCommissioned_in&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;False&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;0&quot; Id=&quot;4004&quot; Length=&quot;4&quot; LineNumber=&quot;7&quot; Name=&quot;TotalDevicesByGateway_in&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;0&quot; Id=&quot;4005&quot; Length=&quot;4&quot; LineNumber=&quot;8&quot; Name=&quot;OkDevicesByGateway_in&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;1&quot; Id=&quot;4006&quot; Length=&quot;4&quot; LineNumber=&quot;11&quot; Name=&quot;InterfaceSts&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;False&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4007&quot; Length=&quot;17&quot; LineNumber=&quot;15&quot; Name=&quot;IPAddress&quot; StringLength=&quot;17&quot; SubType=&quot;33&quot; Type=&quot;61&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4008&quot; Length=&quot;4&quot; LineNumber=&quot;16&quot; Name=&quot;Flt&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4009&quot; Length=&quot;4&quot; LineNumber=&quot;17&quot; Name=&quot;CommsAlm&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4010&quot; Length=&quot;4&quot; LineNumber=&quot;18&quot; Name=&quot;UncommissionedAlm&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4011&quot; Length=&quot;4&quot; LineNumber=&quot;20&quot; Name=&quot;Sts&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4012&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;DeviceTotalCount&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;0&quot; Id=&quot;4013&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;DeviceOkCount&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA; &lt;/BindingVars&gt;&#xA; &lt;PublicVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;FunctionVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;XmlNodeVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;ObjectVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;Labels Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;WebServiceVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;BufferedVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;DataFileVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;TrendLogVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA;&lt;/PEObject&gt;&#xA;"/>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+      <PropertyTab Name = "InVarTab">
+        <PropertyGroup Name = "InVarGroup">
+          <Variable Name                  = "ControllerIPAddress_in"
+                    DisplayName           = "ControllerIPAddress_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ControllerStatus_in"
+                    DisplayName           = "ControllerStatus_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ControllerCommsStatus_in"
+                    DisplayName           = "ControllerCommsStatus_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ControllerCommissioned_in"
+                    DisplayName           = "ControllerCommissioned_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "InterfaceSts"
+                    DisplayName           = "InterfaceSts"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "TotalDevicesByGateway_in"
+                    DisplayName           = "TotalDevicesByGateway_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "OkDevicesByGateway_in"
+                    DisplayName           = "OkDevicesByGateway_in"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+        </PropertyGroup>
+      </PropertyTab>
+      <PropertyTab Name = "OutVarTab">
+        <PropertyGroup Name = "OutVarGroup">
+          <Variable Name                  = "IPAddress"
+                    DisplayName           = "IPAddress"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Flt"
+                    DisplayName           = "Flt"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CommsAlm"
+                    DisplayName           = "CommsAlm"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "UncommissionedAlm"
+                    DisplayName           = "UncommissionedAlm"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Sts"
+                    DisplayName           = "Sts"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "DeviceTotalCount"
+                    DisplayName           = "DeviceTotalCount"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "DeviceOkCount"
+                    DisplayName           = "DeviceOkCount"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Int32"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+        </PropertyGroup>
+      </PropertyTab>
+
+
+    </ObjectType>
+    <ObjectType Name            = "udt.2enshi43dtmu5fhmhswe6sz4oi.nsng43hq2ozapuzatw4qqxxfxnkkli7o"
+                DisplayName     = ""
+                Description     = ""
+                Base            = "tgml.MenuItem"
+                Icon            = ""
+                Abstract        = "0"
+                Implements      = ""
+                DefaultProperty = ""
+                Version         = "1"
+                >
+      <PropertyTab Name = "BASIC">
+        <PropertyGroup Name = "Menu">
+          <ObjectReference Name                  = "MI0"
+                           DisplayName           = "MI0"
+                           Description           = ""
+                           Visibility            = "Hidden"
+                           Optional              = "0"
+                           ReadOnly              = "0"
+                           Static                = "0"
+                           RTWriteable           = "0"
+                           Scope                 = "Sys"
+                           Copy                  = "1"
+                           Nullable              = "1"
+                           >
+              <Type Configurable = "No" Value = "system.Object"/>
+              <InitReference/>
+          </ObjectReference>
+          <Parameter Name                  = "MI0_Icon"
+                     DisplayName           = "MI0_Icon"
+                     Description           = ""
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "0"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "1"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="TrendChart.gif"/>
+          </Parameter>
+          <Parameter Name                  = "MI0_IsMenu"
+                     DisplayName           = "MI0_IsMenu"
+                     Description           = ""
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "0"
+                     Static                = "0"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "1"
+                     Nullable              = "1"
+                     >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="0"/>
+          </Parameter>
+          <ObjectReference Name                  = "MI1"
+                           DisplayName           = "MI1"
+                           Description           = ""
+                           Visibility            = "Hidden"
+                           Optional              = "0"
+                           ReadOnly              = "0"
+                           Static                = "0"
+                           RTWriteable           = "0"
+                           Scope                 = "Sys"
+                           Copy                  = "1"
+                           Nullable              = "1"
+                           >
+              <Type Configurable = "No" Value = "system.Object"/>
+              <InitReference/>
+          </ObjectReference>
+          <Parameter Name                  = "MI1_Icon"
+                     DisplayName           = "MI1_Icon"
+                     Description           = ""
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "0"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "1"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="MultipleTrendLogList.gif"/>
+          </Parameter>
+          <Parameter Name                  = "MI1_IsMenu"
+                     DisplayName           = "MI1_IsMenu"
+                     Description           = ""
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "0"
+                     Static                = "0"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "1"
+                     Nullable              = "1"
+                     >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="0"/>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+
+
+    </ObjectType>
+    <ObjectType Name            = "udt.2enshi43dtmu5fhmhswe6sz4oi.k3rzlcij3vmvttxd3r7ucjoxf5dw4bzu"
+                DisplayName     = ""
+                Description     = ""
+                Base            = "tgml.MenuItem"
+                Icon            = ""
+                Abstract        = "0"
+                Implements      = ""
+                DefaultProperty = ""
+                Version         = "0"
+                >
+
+
+    </ObjectType>
+
+  </Types>
+<ExportedObjects>
+  <OI NAME="Zoneworks XT Hive Controller 1" TYPE="system.base.Folder">
+    <PI Name="NOTE1" Value="IRD-ICG-B03-SEL-01"/>
+    <OI NAME="Alarms" TYPE="system.base.Folder">
+      <OI NAME="Alarm View" TYPE="alarm.AlarmViewer">
+        <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+          <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+            <PI Name="Column" Value="Priority"/>
+            <PI Name="DisplayName" Value="Priority"/>
+            <PI Name="Operator" Value="0"/>
+            <PI Name="PropertyType" Value="alarm.pt.AlarmPriority"/>
+            <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+              <PI Name="MaxValue" Value="5"/>
+              <PI Name="MinValue" Value="0"/>
+            </OI>
+          </OI>
+          <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+            <PI Name="Column" Value="Source"/>
+            <PI Name="DisplayName" Value="Source"/>
+            <PI Name="Operator" Value="0"/>
+            <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+              <PI Name="Value" Value="*Zoneworks XT Hive Controller 1*"/>
+            </OI>
+          </OI>
+        </OI>
+      </OI>
+      <OI DESCR="Common Alarm" NAME="Sum Alarm" TYPE="alarm.SumAlarm">
+        <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+        <PI Name="AlarmPriority" Value="10"/>
+        <PI Name="Category">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="NOTE1" Value="IRD-B-HV-01"/>
+        <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+        <PI Name="ResetPriority" Value="10"/>
+        <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+          <OI NAME="AlarmState" TYPE="event.filter.expression.Enum" flags="aggregated" hidden="1">
+            <PI Name="Column" Value="AlarmState"/>
+            <PI Name="DisplayName" Value="Alarm state"/>
+            <PI Name="EnumType" Value="alarm.pt.AlarmState"/>
+            <OI NAME="1" TYPE="event.filter.expression.EnumValue" flags="aggregated" hidden="1">
+              <PI Name="Value" Value="1"/>
+            </OI>
+            <OI NAME="2" TYPE="event.filter.expression.EnumValue" flags="aggregated" hidden="1">
+              <PI Name="Value" Value="2"/>
+            </OI>
+          </OI>
+          <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+            <PI Name="Column" Value="Source"/>
+            <PI Name="DisplayName" Value="Source"/>
+            <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+              <PI Name="Value" Value="*Zoneworks XT Hive Controller 1*"/>
+            </OI>
+          </OI>
+          <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+            <PI Name="Column" Value="Priority"/>
+            <PI Name="DisplayName" Value="Priority"/>
+            <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+              <PI Name="MaxValue" Value="5"/>
+              <PI Name="MinValue" Value="0"/>
+            </OI>
+          </OI>
+        </OI>
+        <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1"/>
+      </OI>
+      <OI DESCR="Comms Failure" NAME="Controller Comms Failure" TYPE="alarm.MultiStateAlarm">
+        <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+        <PI Name="AlarmPriority" Value="4"/>
+        <PI Name="Category">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="MonitoredVariable" Unit="0x2E0006">
+          <Reference DeltaFilter="0" Object="../../Variables/CommsAlm" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="NOTE1" Value="Zoneworks XT Hive Controller 1"/>
+        <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+        <PI Name="ResetPriority" Value="4"/>
+        <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+          <PI Name="FirstValue" Value="1"/>
+          <PI Name="LastValue" Value="1"/>
+        </OI>
+        <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1">
+          <PI Name="ObjectReference">
+            <Reference DeltaFilter="0" Object="../../../../_Common/Graphics/Hive Controller Summary" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI DESCR="Fault" NAME="Controller Fault" TYPE="alarm.MultiStateAlarm">
+        <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+        <PI Name="AlarmPriority" Value="4"/>
+        <PI Name="Category">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="MonitoredVariable" Unit="0x2E0006">
+          <Reference DeltaFilter="0" Object="../../Variables/Flt" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="NOTE1" Value="Zoneworks XT Hive Controller 1"/>
+        <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+        <PI Name="ResetPriority" Value="4"/>
+        <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+          <PI Name="FirstValue" Value="1"/>
+          <PI Name="LastValue" Value="1"/>
+        </OI>
+        <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1">
+          <PI Name="ObjectReference">
+            <Reference DeltaFilter="0" Object="../../../../_Common/Graphics/Hive Controller Summary" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI DESCR="Uncommissioned" NAME="Controller UncommissionedAlm" TYPE="alarm.MultiStateAlarm">
+        <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+        <PI Name="AlarmPriority" Value="4"/>
+        <PI Name="Category">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="MonitoredVariable" Unit="0x2E0006">
+          <Reference DeltaFilter="0" Object="../../Variables/UncommissionedAlm" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="NOTE1" Value="Zoneworks XT Hive Controller 1"/>
+        <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+        <PI Name="ResetPriority" Value="4"/>
+        <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+          <PI Name="FirstValue" Value="1"/>
+          <PI Name="LastValue" Value="1"/>
+        </OI>
+        <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1">
+          <PI Name="ObjectReference">
+            <Reference DeltaFilter="0" Object="../../../../_Common/Graphics/Hive Controller Summary" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI DESCR="Devices with issues" NAME="DeviceNotOkCount" TYPE="alarm.OutOfReferenceRangeAlarm">
+        <PI Name="Category">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="HighLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Device count mismatch"/>
+        <PI Name="HighLimitPriority" Value="4"/>
+        <PI Name="LowLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+        <PI Name="LowLimitPriority" Value="4"/>
+        <PI Name="MonitoredVariable">
+          <Reference DeltaFilter="0" Object="../../Variables/DeviceOkCount" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="NOTE1" Value="ICG-L02 Emergency Lighting"/>
+        <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+        <PI Name="ResetPriority" Value="4"/>
+        <PI Name="SetpointReference" Unit="0x10001">
+          <Reference DeltaFilter="0" Object="../../Variables/DeviceTotalCount" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="TimeDelayToOffNormal" Value="30"/>
+        <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1">
+          <PI Name="ObjectReference">
+            <Reference DeltaFilter="0" Object="../../../../../Groups/_Common/Graphics/ICG Fittings Summary" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="Variables" TYPE="system.base.Folder">
+      <OI DESCR="Hive controller comms failure. fault 0=normal, 1=fault, 2=unknown" NAME="CommsAlm" TYPE="server.point.IV">
+        <PI Name="Value" Unit="0x2E0006" Value="0">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="CommsAlm" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Hive controller fault. 0=normal, 1=fault, 2=unknown" NAME="Flt" TYPE="server.point.IV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="Flt" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Hive controller uncommissioned alarm. 0=normal, 1=uncommissioned, 2=unknown" NAME="UncommissionedAlm" TYPE="server.point.IV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="UncommissionedAlm" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Hive controller IP address" NAME="IPAddress" TYPE="server.point.SV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="IPAddress" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Hive controller extended controller status 0=normal, 1=offline, 2=unknown, 3=fault, 4=uncommissioned, 7=faulted,uncommissioned" NAME="Sts" TYPE="server.point.IV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="Sts" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="DeviceOkCount" TYPE="server.point.IV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="DeviceOkCount" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="DeviceTotalCount" TYPE="server.point.IV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Programs/external_bindings" Property="DeviceTotalCount" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+    </OI>
+    <OI NAME="Programs" TYPE="system.base.Folder">
+      <OI NAME="external_bindings" TYPE="udt.3fpzabulhtwedaq2gk46w4r3v4.yxcfwn34nj75xwaugaf6votn3bpmvki6">
+        <PI Name="ControllerCommissioned_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/ControllerCommissioned/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="ControllerCommsStatus_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/ControllerCommsStatus/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="ControllerIPAddress_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/ControllerIPAddress/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="ControllerStatus_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/ControllerStatus/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="InterfaceSts">
+          <Reference DeltaFilter="0" Object="../../../../Zoneworks XT Hive Server/Variables/InterfaceSts" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="OkDevicesByGateway_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/OkDevicesByGateway/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="Task">
+          <Reference DeltaFilter="0" Locked="1" Object="~/System/Tasks/Task 3" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="TotalDevicesByGateway_in">
+          <Reference DeltaFilter="0" Object="../../../../../../Interfaces/Zoneworks_XT_SQL_Data_Reader/Zoneworks_XT_SQL_Data_Reader/TotalDevicesByGateway/Zoneworks XT Hive Controller 1" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+    </OI>
+    <OI NAME="Commissioning" TYPE="system.base.Folder">
+      <OI NAME="ControllerName" TYPE="server.point.SV"/>
+    </OI>
+    <OI NAME="Trends" TYPE="system.base.Folder">
+      <OI NAME="Logs" TYPE="system.base.Folder">
+        <OI NAME="AlarmCode" TYPE="trend.TLogChangeOfValue">
+          <PI Name="LogPoint" Unit="0x10001"/>
+          <PI Name="MeterEndTime" Value="Tx05f558559393e1b0"/>
+          <PI Name="MeterStartTime" Value="Tx05f558559393e1b0"/>
+          <PI Name="MeterTime" Value="Tx05f55855939bb2b0"/>
+          <PI Name="StartTime" Value="Tx05f558559370b6b0"/>
+          <PI Name="Enabled" Value="1"/>
+        </OI>
+        <OI NAME="Running" TYPE="trend.TLogChangeOfValue">
+          <PI Name="LogArray" Unit="0x10001"/>
+          <PI Name="LogPoint" Unit="0x10001"/>
+          <PI Name="MeterEndTime" Value="Tx05f558559393e1b0"/>
+          <PI Name="MeterStartTime" Value="Tx05f558559393e1b0"/>
+          <PI Name="MeterTime" Value="Tx05f55855939bb2b0"/>
+          <PI Name="StartTime" Value="Tx05f558559370b6b0"/>
+          <PI Name="Enabled" Value="1"/>
+        </OI>
+        <OI NAME="Fault" TYPE="trend.TLogChangeOfValue">
+          <PI Name="LogPoint" Unit="0x10001"/>
+          <PI Name="MeterEndTime" Value="Tx05f558577abfeab0"/>
+          <PI Name="MeterStartTime" Value="Tx05f558577abfeab0"/>
+          <PI Name="MeterTime" Value="Tx05f558577ac3d5b0"/>
+          <PI Name="StartTime" Value="Tx05f558577a799fb0"/>
+          <PI Name="Enabled" Value="1"/>
+        </OI>
+      </OI>
+      <OI NAME="Charts" TYPE="system.base.Folder">
+        <OI NAME="UCL-ICG-L01-01 Chart" TYPE="trend.view.GraphicalTrendView">
+          <PI Name="DisplayStartTime" Value="Tx05f55792e2a689b0"/>
+          <PI Name="YAxisMaximum1" Value="0.11050000000000001"/>
+          <PI Name="YAxisMaximum2" Value="0.10000000000000001"/>
+          <PI Name="YAxisMinimum1" Value="-0.11000000000000001"/>
+          <OI NAME="AlarmCode Series" TYPE="trend.view.TrendLogSeriesProperties" hidden="1">
+            <PI Name="Color" Value="-65536"/>
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/AlarmCode" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="DisplayType" Value="1"/>
+            <PI Name="ShowEvents" Value="1"/>
+            <PI Name="ShowPointMarkers" Value="1"/>
+          </OI>
+          <OI NAME="Fault Series" TYPE="trend.view.TrendLogSeriesProperties" hidden="1">
+            <PI Name="Color" Value="-5103070"/>
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/Fault" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="DisplayType" Value="2"/>
+          </OI>
+          <OI NAME="Running Series" TYPE="trend.view.TrendLogSeriesProperties" hidden="1">
+            <PI Name="Color" Value="-16711936"/>
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/Running" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="DisplayType" Value="2"/>
+          </OI>
+        </OI>
+      </OI>
+      <OI NAME="Lists" TYPE="system.base.Folder">
+        <OI NAME="UCL-ICG-L01-01 Log" TYPE="trend.view.MultiTextualTrendView">
+          <OI NAME="AlarmCode" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/AlarmCode" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="Fault" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/Fault" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="Running" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+            <PI Name="CustomCalculationPeriodStart" Value="Tx05f54a4fdfb800b0"/>
+            <PI Name="DisplayLog">
+              <Reference DeltaFilter="0" Object="../../../Logs/Running" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="Layout" TYPE="client.layout.GridViewSettings" flags="aggregated,hidden" hidden="1">
+            <PI Name="PropertiesPanelWidth" Value="0"/>
+            <OI NAME="ColumnSetting0" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+              <PI Name="FieldName" Value="Timestamp"/>
+              <PI Name="Title" Value="Timestamp"/>
+              <PI Name="Width" Value="119"/>
+            </OI>
+            <OI NAME="ColumnSetting1" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+              <PI Name="FieldName" Value="Serie1"/>
+              <PI Name="Title" Value="AlarmCode"/>
+              <PI Name="VisiblePosition" Value="1"/>
+              <PI Name="Width" Value="61"/>
+            </OI>
+            <OI NAME="ColumnSetting2" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+              <PI Name="FieldName" Value="Serie2"/>
+              <PI Name="Title" Value="Fault"/>
+              <PI Name="VisiblePosition" Value="2"/>
+              <PI Name="Width" Value="30"/>
+            </OI>
+            <OI NAME="ColumnSetting3" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+              <PI Name="FieldName" Value="Serie3"/>
+              <PI Name="Title" Value="Running"/>
+              <PI Name="VisiblePosition" Value="3"/>
+              <PI Name="Width" Value="46"/>
+            </OI>
+            <OI NAME="SortSetting0" TYPE="client.layout.SortSetting" flags="aggregated">
+              <PI Name="FieldName" Value="Timestamp"/>
+              <PI Name="SortDirection" Value="1"/>
+            </OI>
+          </OI>
+        </OI>
+      </OI>
+      <OI NAME="Menu" TYPE="udt.2enshi43dtmu5fhmhswe6sz4oi.nsng43hq2ozapuzatw4qqxxfxnkkli7o">
+        <PI Name="MI0">
+          <Reference DeltaFilter="0" Object="../Charts/UCL-ICG-L01-01 Chart" Retransmit="0" TransferRate="10"/>
+        </PI>
+        <PI Name="MI1">
+          <Reference DeltaFilter="0" Object="../Lists/UCL-ICG-L01-01 Log" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+    </OI>
+    <OI NAME="Documentation" TYPE="system.base.Folder">
+      <OI NAME="Menu" TYPE="udt.2enshi43dtmu5fhmhswe6sz4oi.k3rzlcij3vmvttxd3r7ucjoxf5dw4bzu"/>
+    </OI>
+  </OI>
+</ExportedObjects>
+
+<SupportingObjects Container="~/System/Alarm Control Panel/Alarm Handling/Categories">
+  <OI DESCR="Emergency and Exit Lighting" NAME="Emergency and Exit Lighting" TYPE="alarm.categories.Category" flags="aggregated">
+    <PI Name="Category" Value="Emergency and Exit Lighting"/>
+  </OI>
+</SupportingObjects>
+
+</ObjectSet>
