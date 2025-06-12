@@ -81,6 +81,32 @@ class EBOXMLBuilder:
         ET.SubElement(meta_info, "ServerFullPath", {"Value": self.server_full_path})
         self.meta_information = meta_info
 
+    def create_folder(self, name, description=None, note1=None, note2=None):
+        """
+        Create a Folder XML element (TYPE="system.base.Folder").
+
+        :param name: The name of the folder (required).
+        :param description: Optional description for the folder.
+        :param note1: Optional note1 for the folder.
+        :param note2: Optional note2 for the folder.
+        :return: An XML element representing the Folder.
+        """
+        attribs = {
+            "NAME": name,
+            "TYPE": "system.base.Folder",
+        }
+        if description is not None:
+            attribs["DESCR"] = description
+
+        folder = ET.Element("OI", attribs)
+
+        if note1:
+            ET.SubElement(folder, "PI", {"Name": "NOTE1", "Value": note1})
+        if note2:
+            ET.SubElement(folder, "PI", {"Name": "NOTE2", "Value": note2})
+
+        return folder
+
     def add_to_exported_objects(self, elements):
         """
         Adds elements to the ExportedObjects section of the XML object set.

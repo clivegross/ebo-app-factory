@@ -26,6 +26,9 @@ classifiers = [
 ]
 dependencies = ["openpyxl"]
 
+[tool.hatch.envs.default]
+path = ".hatch-env"
+
 [project.optional-dependencies]
 dev = ["black"]
 
@@ -33,6 +36,15 @@ dev = ["black"]
 dependencies = [
     "black",
 ]
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest",
+  "pytest-cov"
+]
+
+[tool.hatch.envs.test.scripts]
+test = "pytest --cov=ebo_app_factory --cov-report=term-missing"
 
 
 [project.urls]

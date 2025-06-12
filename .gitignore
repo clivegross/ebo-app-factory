@@ -39,6 +39,7 @@ MANIFEST
 .env/
 .venv/
 env/
+.hatch-env/
 venv/
 ENV/
 env.bak/

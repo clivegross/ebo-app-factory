@@ -322,6 +322,10 @@ print(xml_str)
 
 This will generate an EBO-compliant XML file with your schedule and special events, ready for import into EBO.
 
+## Contributing
+
+See [Contributing](CONTRIBUTING.md)
+
 ## License
 
 `ebo-app-factory` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
