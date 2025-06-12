@@ -1,7 +1,6 @@
-# ebo_app_factory
+# ebo-app-factory
 
-[![PyPI - Version](https://img.shields.io/pypi/v/ebo-app-factory.svg)](https://pypi.org/project/ebo-app-factory)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ebo-app-factory.svg)](https://pypi.org/project/ebo-app-factory)
+[![Build Status](https://github.com/clivegross/ebo-app-factory/actions/workflows/build.yml/badge.svg)](https://github.com/clivegross/ebo-app-factory/actions/workflows/build.yml)
 
 ---
 

@@ -83,6 +83,56 @@ hatch run ruff src/ tests/
 
 ---
 
+## Versioning and Release Automation
+
+### Bumping the Version
+
+Use Hatch to bump the version automatically. This updates the version in `src/ebo_app_factory/__about__.py`:
+
+- **Patch release (e.g., 0.1.4 → 0.1.5):**
+  ```sh
+  hatch version patch
+  ```
+- **Minor release (e.g., 0.1.4 → 0.2.0):**
+  ```sh
+  hatch version minor
+  ```
+- **Major release (e.g., 0.1.4 → 1.0.0):**
+  ```sh
+  hatch version major
+  ```
+- **Set a specific version:**
+  ```sh
+  hatch version 0.1.7
+  ```
+
+Commit the version bump:
+
+```sh
+git add src/ebo_app_factory/__about__.py
+git commit -m "Bump version to x.y.z"
+```
+
+### GitHub Flow for Automated Release
+
+1. **Push your changes to GitHub:**
+
+   ```sh
+   git push origin main
+   ```
+
+2. **Tag the new release (replace `x.y.z` with your version):**
+
+   ```sh
+   git tag v0.1.5
+   git push origin v0.1.5
+   ```
+
+3. **GitHub Actions will automatically build and upload the release**  
+   (see `.github/workflows/build.yml` for details).
+
+---
+
 ## Example Workflow
 
 ```sh
@@ -92,6 +142,12 @@ pip install hatch
 hatch shell
 hatch test
 hatch build
+hatch version patch   # or minor/major
+git add src/ebo_app_factory/__about__.py
+git commit -m "Bump version to x.y.z"
+git push origin main
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
 ---
