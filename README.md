@@ -11,6 +11,9 @@
 - [Basic usage- template and spreadsheet](#basic-usage)
 - [Advanced usage- templates and spreadsheet](#advanced-usage)
 - [Building from scratch](#building-from-scratch-programmatically)
+- [Build Schedules](#eboschedulebuilder-usage)
+- [Build Modbus stuff](#ebomodbusbuilder-usage)
+- [Build Alarms and Alarm Views](#eboalarmbuilder-usage)
 - [License](#license)
 
 ## Installation
@@ -27,7 +30,7 @@ An EBO xml file or files are created for import into EBO. Each file contains 'co
 
 All 'copies' of the template are written into an xml document or documents for importing into EBO. Each copy is presented in parallel in the root of the import file.
 
-### Basic usage
+## Basic usage
 
 The application requires two inputs in its most basic use case:
 
@@ -190,12 +193,32 @@ from ebo_app_factory.ebo_xml_builder import EBOXMLBuilder
 import xml.etree.ElementTree as ET
 
 # Create a builder instance
-builder = EBOXMLBuilder(ebo_version="6.0.4.90", server_full_path="/Server 1")
+builder = EBOXMLBuilder(ebo_version="6.0.4.90")
 
-# Create a custom object (example: a device)
-device = ET.Element("OI", {"NAME": "Test Device", "TYPE": "modbus.network.TCPDevice"})
+# Create some folders
+folder = builder.create_folder(name="Test Folder", description="Test Description")
+child_folder = builder.create_folder(
+   name="Child Folder",
+   description="Child Description",
+   note1="Note1",
+   note2="Note2",
+)
 
-# Add the device to the exported objects section
+# Create a hyperlink
+url = "https://building.com/?semantic=https%3A%2F%2Fexample.com%2Fbldg%23FIRE-Z1#"
+hyperlink = builder.create_hyperlink(
+   name="Semantic Viewer",
+   url=url,
+   description="Opens semantic viewer",
+   note1="Semantic Viewer",
+   note2="Fire Zone Z1",
+)
+
+# Add the objects to the tree
+child_folder.append(hyperlink)
+folder.append(child_folder)
+
+# Add the objects to the exported objects section
 builder.add_to_exported_objects(device)
 
 # Write the XML to a file
@@ -320,6 +343,70 @@ print(xml_str)
 ```
 
 This will generate an EBO-compliant XML file with your schedule and special events, ready for import into EBO.
+
+### EBOAlarmBuilder Usage
+
+The `EBOAlarmBuilder` class extends `EBOXMLBuilder` and provides methods for building EBO-compliant alarm XML structures, including Change of State Alarms, Sum Alarms, and Alarm Viewers.
+
+#### Example
+
+```python
+from ebo_app_factory.alarm_builder import EBOAlarmBuilder
+
+# Create a builder instance
+builder = EBOAlarmBuilder(ebo_version="6.0.4.90", server_full_path="/Server 1")
+
+# Create a Change of State Alarm
+cos_alarm = builder.create_change_of_state_alarm(
+    name="ZONE Z1 - ICG-B05 - ALARM",
+    description="Alarm",
+    note1="Fire Detection Zone Z1",
+    note2="IRD-ICG-B05",
+    alarm_message="@(SourceObject->NOTE1) - @(SourceObject->DESCR)",
+    reset_message="@(SourceObject->NOTE1) - @(SourceObject->DESCR) Returned to Normal",
+    category="~/System/Alarm Control Panel/Alarm Handling/Categories/Fire",
+    monitored_variable="../../../../../../Interfaces/Modbus TCP Network/Fire Detection System/Ampac ICG-L02 Main Fire Alarm Control Panel Modbus TCP Gateway 1/6002-6251 Zone Status/Z1 ALARM",
+    priority=1,
+    attachment="../../../../../_Common/Graphics/ICG-B05 Fire"
+)
+
+# Create a Sum Alarm with filters
+sum_alarm = builder.create_sum_alarm(
+    name="Sum Alarm",
+    conditions_values={
+        "Source": ["* Z1 *- ALARM"],
+        "Category": ["Fire"],
+        "AlarmState": [1, 2],
+    },
+    description="Sum Alarm Example",
+    priority=1,
+    category="~/System/Alarm Control Panel/Alarm Handling/Categories/Fire"
+)
+
+# Create an Alarm Viewer
+alarm_viewer = builder.create_alarm_view(
+    name="Alarm View",
+    conditions_values={
+        "Category": ["Fire"],
+        "Source": ["* Z1 *- ALARM", "*Sum Alarm*"],
+    },
+    description="Alarm Viewer for Fire Alarms"
+)
+
+# Add the alarms to the exported objects section
+builder.add_to_exported_objects(cos_alarm)
+builder.add_to_exported_objects(sum_alarm)
+builder.add_to_exported_objects(alarm_viewer)
+
+# Write the XML to a file
+builder.write_xml("alarms.xml")
+
+# Or get the pretty-printed XML as a string
+xml_str = builder.to_pretty_xml()
+print(xml_str)
+```
+
+This will generate an EBO-compliant XML file with your alarm objects, ready for import into EBO.
 
 ## Contributing
 
