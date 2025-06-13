@@ -19,6 +19,9 @@ class EBOXMLBuilder:
         </ObjectSet>
     """
 
+    FOLDER_TYPE = "system.base.Folder"
+    HYPERLINK_TYPE = "client.Hyperlink"
+
     def __init__(self, ebo_version="6.0.4.90", server_full_path="/Server 1"):
         self._ebo_version = ebo_version
         self._server_full_path = server_full_path
@@ -93,7 +96,7 @@ class EBOXMLBuilder:
         """
         attribs = {
             "NAME": name,
-            "TYPE": "system.base.Folder",
+            "TYPE": self.FOLDER_TYPE,
         }
         if description is not None:
             attribs["DESCR"] = description
@@ -106,6 +109,42 @@ class EBOXMLBuilder:
             ET.SubElement(folder, "PI", {"Name": "NOTE2", "Value": note2})
 
         return folder
+
+    def create_hyperlink(
+        self, name, url=None, description=None, note1=None, note2=None
+    ):
+        """
+        Create a Hyperlink XML element (TYPE="client.Hyperlink").
+
+        :param name: The name of the folder (required).
+        :param description: Optional description for the folder.
+        :param note1: Optional note1 for the folder.
+        :param note2: Optional note2 for the folder.
+        :return: An XML element representing the Folder.
+
+        Example:
+        <OI NAME="Semantic Viewer" TYPE="client.Hyperlink">
+            <PI Name="URL" Value="https://bnewseip01.casino.internal/?semantic=https%3A%2F%2Fexample.com%2Fbldg%23FIRE-Z1#"/>
+        </OI>
+        """
+        attribs = {
+            "NAME": name,
+            "TYPE": self.HYPERLINK_TYPE,
+        }
+        if description is not None:
+            attribs["DESCR"] = description
+
+        hyperlink = ET.Element("OI", attribs)
+
+        if note1:
+            ET.SubElement(hyperlink, "PI", {"Name": "NOTE1", "Value": note1})
+        if note2:
+            ET.SubElement(hyperlink, "PI", {"Name": "NOTE2", "Value": note2})
+        if url is None:
+            url = ""
+        ET.SubElement(hyperlink, "PI", {"Name": "URL", "Value": url})
+
+        return hyperlink
 
     def add_to_exported_objects(self, elements):
         """
