@@ -125,7 +125,7 @@ class EBOAlarmBuilder(EBOXMLBuilder):
 
         Args:
             - condition: Name of the filter condition (e.g., "Source", "Category", "AlarmState").
-            - values: List of values for the condition.
+            - values: List of values for the condition. Note AlarmState values (1 = Alarm, 2 = Acknowledged)
 
         Returns:
             An XML Element representing the Event Filter Condition.
@@ -246,8 +246,13 @@ class EBOAlarmBuilder(EBOXMLBuilder):
         Create a Sum Alarm XML object.
 
         Args:
-            - name:
-            - filters:
+            name (str): The name of the sum alarm.
+            conditions_values (dict): Dictionary mapping filter condition names to lists of values.
+                Example: {"Source": ["* Z1 *- ALARM"], "Category": ["Fire"], "AlarmState": [1, 2]}
+            **kwargs: Additional common alarm parameters (description, note1, note2, alarm_message, reset_message, category, priority, attachment, extra_pis).
+
+        Returns:
+            xml.etree.ElementTree.Element: The root OI element for the sum alarm.
 
         Example XML structure:
         <OI NAME="Sum Alarm" TYPE="alarm.SumAlarm">
