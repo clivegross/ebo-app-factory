@@ -15,6 +15,7 @@
 - [Build Modbus stuff](#ebomodbusbuilder-usage)
 - [Build Alarms and Alarm Views](#eboalarmbuilder-usage)
 - [Contributing](#contributing)
+- [Changelog](#changelog)
 - [License](#license)
 
 ## Installation
@@ -451,6 +452,10 @@ This will generate an EBO-compliant XML file with your alarm objects, ready for 
 ## Contributing
 
 See [Contributing](CONTRIBUTING.md)
+
+## Changelog
+
+See [Changelog](CHANGELOG.md)
 
 ## License
 
