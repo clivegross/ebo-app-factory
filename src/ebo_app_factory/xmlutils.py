@@ -303,3 +303,21 @@ def print_pretty_xml(obj):
         str: Pretty-printed XML string.
     """
     print(to_pretty_xml(obj))
+
+
+def convert_minidom_to_etree(minidom_element):
+    """Convert minidom element to ElementTree element, removing extra whitespace"""
+    # Get XML string without extra whitespace
+    xml_string = minidom_element.toxml()
+
+    # Parse and remove whitespace
+    temp_element = ET.fromstring(xml_string)
+
+    # Remove whitespace from all elements
+    for elem in temp_element.iter():
+        if elem.text and not elem.text.strip():
+            elem.text = None
+        if elem.tail and not elem.tail.strip():
+            elem.tail = None
+
+    return temp_element

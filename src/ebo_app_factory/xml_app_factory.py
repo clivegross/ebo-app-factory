@@ -1,9 +1,17 @@
+import xml
 import openpyxl
 from xml.dom import minidom
+import xml.etree.ElementTree as ET
 import sys
 import re
 import os
-from .xmlutils import extract_mustache_tags_from_xml, find_and_clean_folder_elements
+
+from ebo_app_factory.ebo_xml_builder import EBOXMLBuilder
+from .xmlutils import (
+    convert_minidom_to_etree,
+    extract_mustache_tags_from_xml,
+    find_and_clean_folder_elements,
+)
 
 # <?xml version="1.0" encoding="UTF-8"?>
 # <ObjectSet ExportMode="Special" Note="TypesFirst" Version="3.2.1.630">
@@ -232,18 +240,11 @@ class ApplicationFactory(object):
         self.template_child_elements_dict = template_child_elements_dict
         self.factory_placeholders = factory_placeholders
         self.factory_copy_substrings = factory_copy_substrings
-
-        doc_template_str = """<?xml version="1.0" encoding="utf-8"?>
-			<ObjectSet ExportMode="Special" Note="TypesFirst" Version="4.0.1.86">
-			\t<MetaInformation>
-			\t\t<ExportMode Value="Special" />
-			\t\t<RuntimeVersion Value="4.0.1.86"/>
-			\t\t <SourceVersion Value="4.0.1.86"/>
-			\t\t<ServerFullPath Value="/ebo_app_factory"/>
-			\t</MetaInformation>
-			</ObjectSet>"""
-        self.factory_doc = minidom.parseString(doc_template_str)
-        self.doc_root_element_tagname = "ObjectSet"
+        self.xml_builder = EBOXMLBuilder(
+            ebo_version=ebo_version,
+            server_full_path=ebo_server_full_path,
+            export_mode=ebo_export_mode,
+        )
 
     def stdout_progress(self, step, total_steps):
         if self.show_progress:
@@ -275,27 +276,44 @@ class ApplicationFactory(object):
         for node in self.factory_copies_dict:
             size += len(self.factory_copies_dict[node])
         progress = 1
+        for item in self.factory_copies_dict["Types"]:
+            # Convert minidom Element to ElementTree Element
+            etree_element = convert_minidom_to_etree(item)
+            self.xml_builder.add_object_type(etree_element)
+        for item in self.factory_copies_dict["ExportedObjects"]:
+            # Convert minidom Element to ElementTree Element
+            # Check if it's a minidom Element before converting
+            if isinstance(item, xml.dom.minidom.Element):
+                etree_element = convert_minidom_to_etree(item)
+            elif isinstance(item, ET.Element):
+                etree_element = item  # Already an ElementTree Element
+            else:
+                # Handle other types or raise an error
+                raise TypeError(f"Unexpected element type: {type(item)}")
+            self.xml_builder.add_to_exported_objects(etree_element)
+            # report progress
+            progress = self.stdout_progress(progress, size)
         # loop through dictionary keys for each element to insert children
-        for node, elements in self.factory_copies_dict.items():
-            # create an empty child element inside root DOM Element ObjectSet
-            factory_element = self.factory_doc.createElement(node)
-            self.factory_doc.documentElement.appendChild(factory_element)
-            # self.doc_template.getElementsByTagName(self.doc_root_element_tagname)[0].appendChild()
-            # loop through elements and insert as children
-            for child_element in elements:
-                self.factory_doc.getElementsByTagName(node)[0].appendChild(
-                    child_element
-                )
-                # report progress
-                progress = self.stdout_progress(progress, size)
+        # for node, elements in self.factory_copies_dict.items():
+        #     # create an empty child element inside root DOM Element ObjectSet
+        #     factory_element = self.factory_doc.createElement(node)
+        #     self.factory_doc.documentElement.appendChild(factory_element)
+        #     # self.doc_template.getElementsByTagName(self.doc_root_element_tagname)[0].appendChild()
+        #     # loop through elements and insert as children
+        #     for child_element in elements:
+        #         self.factory_doc.getElementsByTagName(node)[0].appendChild(
+        #             child_element
+        #         )
         if print_result:
-            print(self.factory_doc.toprettyxml(encoding="utf-8"))
-            print(self.factory_doc)
+            # print(self.factory_doc.toprettyxml(encoding="utf-8"))
+            # print(self.factory_doc)
+            print(self.xml_builder.to_pretty_xml())
         if write_result:
             if self.show_progress:
                 print('\nWriting document to "' + self.xml_out_file + '" ...')
-            with open(self.xml_out_file, "wb") as outfile:
-                outfile.write(self.factory_doc.toxml(encoding="utf-8"))
+                self.xml_builder.write_xml(self.xml_out_file)
+            # with open(self.xml_out_file, "wb") as outfile:
+            #     outfile.write(self.factory_doc.toxml(encoding="utf-8"))
             if self.show_progress:
                 print("\nDone.\n")
 
@@ -323,17 +341,103 @@ class ApplicationFactory(object):
         progress = 1
         # create empty factory copies dictionary
         factory_copies_dict = {key: [] for key in self.template_child_elements_dict}
-        # loop through copy strings list
-        for copy_substrings in self.factory_copy_substrings:
-            # loop through template child DOM Elements, find and replace placeholders
-            # append copy DOM Element to factory copies dictionary of lists
-            for node, elements in self.template_child_elements_dict.items():
-                copy_elements = []
+
+        # Copy Types elements as-is (no modifications needed)
+        if "Types" in self.template_child_elements_dict:
+            factory_copies_dict["Types"] = self.template_child_elements_dict["Types"][:]
+
+        # Only make copies for ExportedObjects, not Types
+        if "ExportedObjects" in self.template_child_elements_dict:
+            elements = self.template_child_elements_dict["ExportedObjects"]
+            # loop through copy strings list
+            for copy_substrings in self.factory_copy_substrings:
                 for element in elements:
                     copy_element = self.replace_placeholders(element, copy_substrings)
-                    factory_copies_dict[node].append(copy_element)
-            # report progress
+                    factory_copies_dict["ExportedObjects"].append(copy_element)
+                # report progress
+                progress = self.stdout_progress(progress, size)
+        self.factory_copies_dict = factory_copies_dict
+
+    def get_unique_copies_for_placeholder(self, placeholder):
+        """
+        returns a list of unique copy strings for the placeholder
+        for the placeholder value, make a list of unique copies strings
+        if self.factory_placeholders: dict = {'controllersA': 'Controller 1', 'controllersB': 'IRD-ICG-B03'}
+        and self.factory_copy_substrings: list = [{'controllersA': 'Controller 2', 'controllersB': 'IRD-ICG-B04'},
+                                                  {'controllersA': 'Controller 3', 'controllersB': 'IRD-ICG-B04'},
+                                                  {'controllersA': 'Controller 4', 'controllersB': 'IRD-ICG-B05'},
+                                                  {'controllersA': 'Controller 5', 'controllersB': 'IRD-ICG-L00'},
+                                                  {'controllersA': 'Controller 6', 'controllersB': 'IRD-ICG-L00'}}
+        and placeholder = 'IRD-ICG-B03'
+        then return {'controllersB': ['IRD-ICG-B04', 'IRD-ICG-B05', 'IRD-ICG-L00']}
+        """
+        unique_copies = {}
+
+        # Find which key has the placeholder value
+        for key, placeholder_value in self.factory_placeholders.items():
+            if placeholder_value == placeholder:
+                # Collect unique values for this key from factory_copy_substrings
+                unique_values = set()
+                for copy_dict in self.factory_copy_substrings:
+                    if key in copy_dict:
+                        unique_values.add(copy_dict[key])
+
+                # Convert set to list and store
+                unique_copies[key] = list(unique_values)
+
+        return unique_copies
+
+    def make_copies_in_folders(self, placeholder_folder_name):
+        """
+        based on the placeholder_folder_name, create an EBO folder for each unique copy
+        and put all copied with mtching value for this column inside the folder
+
+        """
+        # report progress
+        if self.show_progress:
+            print("Creating copies in folders...")
+        size = len(self.factory_copy_substrings)
+        progress = 1
+        factory_copies_dict = {key: [] for key in self.template_child_elements_dict}
+
+        # Copy Types elements as-is (no modifications needed)
+        if "Types" in self.template_child_elements_dict:
+            factory_copies_dict["Types"] = self.template_child_elements_dict["Types"][:]
+
+        copy_folder_names = self.get_unique_copies_for_placeholder(
+            placeholder_folder_name
+        )
+        print(copy_folder_names)
+        # get key of placeholder_folder_name
+        # if self.factory_placeholders: dict = {'controllersA': 'Controller 1', 'controllersB': 'IRD-ICG-B03'} and placeholder_folder_name = 'IRD-ICG-B03' return 'controllersB'
+        folder_key = None
+        for key, value in self.factory_placeholders.items():
+            if value == placeholder_folder_name:
+                folder_key = key
+                break
+        print(f"Folder key for '{placeholder_folder_name}': {folder_key}")
+        folders = []
+        for folder_name in copy_folder_names[folder_key]:
+            # filter self.factory_copy_substrings to only those that have the folder_key: copy_folder_name
+            filtered_copy_substrings = [
+                item
+                for item in self.factory_copy_substrings
+                if item.get(folder_key) == folder_name
+            ]
+            # print(f"Folder name for '{folder_name}': {filtered_copy_substrings}")
+            folder_element = self.xml_builder.create_folder(folder_name)
+
+            elements = self.template_child_elements_dict["ExportedObjects"]
+            # loop through copy strings list
+            for copy_substrings in filtered_copy_substrings:
+                for element in elements:
+                    copy_element = self.replace_placeholders(element, copy_substrings)
+                    etree_element = convert_minidom_to_etree(copy_element)
+                    folder_element.append(etree_element)
+                # report progress
             progress = self.stdout_progress(progress, size)
+            folders.append(folder_element)
+        factory_copies_dict["ExportedObjects"] = folders
         self.factory_copies_dict = factory_copies_dict
 
     def replace_placeholders(self, element, copy_substrings):
@@ -346,7 +450,7 @@ class ApplicationFactory(object):
         for key, placeholder_value in self.factory_placeholders.items():
             copy_value = copy_substrings.get(key)
             if copy_value is None:
-                print(f"Warning: copy_substrings[{key}] is None. Skipping replacement.")
+                # print(f"Warning: copy_substrings[{key}] is None. Skipping replacement.")
                 continue  # Skip this iteration if the value is None
             else:
                 # Ensure the copy_value is a string

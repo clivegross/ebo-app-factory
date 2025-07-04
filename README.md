@@ -14,6 +14,7 @@
 - [Build Schedules](#eboschedulebuilder-usage)
 - [Build Modbus stuff](#ebomodbusbuilder-usage)
 - [Build Alarms and Alarm Views](#eboalarmbuilder-usage)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -110,6 +111,18 @@ Basic example:
    ![EBO import step 2](images/ebo_import_step_2.png)
 
 1. Inspect the imported copies for correct naming and bindings.
+
+#### Group the copies into EBO folders
+
+To automtcially sort and group the copies into EBO folders, ensure there is a column in the spreadsheet for the required folder name of each copy. Then call `make_copies_in_folders` passing in the placeholder value in the first row of the 'folder' column.
+
+```python
+########################
+# Group in folders
+########################
+app_factory.make_copies_in_folders("{{level}}") # assuming the folder column first row is {{level}}
+app_factory.make_document()
+```
 
 ### Advanced usage
 

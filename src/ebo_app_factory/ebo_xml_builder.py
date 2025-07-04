@@ -22,12 +22,20 @@ class EBOXMLBuilder:
     FOLDER_TYPE = "system.base.Folder"
     HYPERLINK_TYPE = "client.Hyperlink"
 
-    def __init__(self, ebo_version="6.0.4.90", server_full_path="/Server 1"):
+    def __init__(
+        self,
+        ebo_version="6.0.4.90",
+        server_full_path="/Server 1",
+        export_mode="Special",
+    ):
         self._ebo_version = ebo_version
         self._server_full_path = server_full_path
+        self.object_types = ET.Element("Types")  # Placeholder for Types
         self.exported_objects = ET.Element(
             "ExportedObjects"
         )  # Placeholder for ExportedObjects
+        # ExportMode can be "Standard" or "Special"
+        self.export_mode = export_mode
         self.object_set = self._create_object_set()
 
     @property
@@ -59,14 +67,15 @@ class EBOXMLBuilder:
         object_set = ET.Element(
             "ObjectSet",
             {
-                "ExportMode": "Standard",
+                "ExportMode": self.export_mode,
                 "Note": "TypesFirst",
-                "SemanticsFilter": "Standard",
+                "SemanticsFilter": self.export_mode,
                 "Version": self.ebo_version,
             },
         )
         self._create_meta_information()
         object_set.append(self.meta_information)
+        object_set.append(self.object_types)  # Add Types section
         object_set.append(self.exported_objects)  # Reuse existing ExportedObjects
         return object_set
 
@@ -77,7 +86,7 @@ class EBOXMLBuilder:
             Element: The MetaInformation element.
         """
         meta_info = ET.Element("MetaInformation")
-        ET.SubElement(meta_info, "ExportMode", {"Value": "Standard"})
+        ET.SubElement(meta_info, "ExportMode", {"Value": self.export_mode})
         ET.SubElement(meta_info, "SemanticsFilter", {"Value": "None"})
         ET.SubElement(meta_info, "RuntimeVersion", {"Value": self.ebo_version})
         ET.SubElement(meta_info, "SourceVersion", {"Value": self.ebo_version})
@@ -145,6 +154,22 @@ class EBOXMLBuilder:
         ET.SubElement(hyperlink, "PI", {"Name": "URL", "Value": url})
 
         return hyperlink
+
+    def add_object_type(self, element):
+        """
+        Adds an object type element to the Types section of the XML object set.
+        Parameters:
+            element (Element): An XML element representing the object type to add.
+        """
+        types_element = self.object_set.find("Types")
+        if types_element is not None:
+            # Just append to existing Types element
+            types_element.append(element)
+        else:
+            # Create Types element if it doesn't exist
+            types_element = ET.Element("Types")
+            types_element.append(element)
+            self.object_set.append(types_element)
 
     def add_to_exported_objects(self, elements):
         """
