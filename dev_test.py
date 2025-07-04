@@ -107,7 +107,9 @@ def main():
             #         print()  # Add blank line between elements
 
             app_factory.make_copies_in_folders("ICG-L04M")
-            app_factory.make_document(write_result=True, print_result=False)
+            app_factory.make_document(
+                write_result=True, print_result=False, max_items_per_file=2
+            )
 
             # app_factory.make_copies()
             # print("Copies made successfully!")

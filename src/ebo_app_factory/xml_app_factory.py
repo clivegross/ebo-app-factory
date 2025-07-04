@@ -253,7 +253,9 @@ class ApplicationFactory(object):
             sys.stdout.flush()
         return step + 1
 
-    def make_document(self, write_result=True, print_result=False):
+    def make_document(
+        self, write_result=True, print_result=False, max_items_per_file=None
+    ):
         """
         The xml document is constructed as follows:
         <ObjectSet>
@@ -280,41 +282,76 @@ class ApplicationFactory(object):
             # Convert minidom Element to ElementTree Element
             etree_element = convert_minidom_to_etree(item)
             self.xml_builder.add_object_type(etree_element)
-        for item in self.factory_copies_dict["ExportedObjects"]:
+
+        number_of_files = calc_number_of_files_needed(
+            self.factory_copies_dict["ExportedObjects"], max_items_per_file
+        )
+        
+        # Add Types once (they don't change per file)
+        for item in self.factory_copies_dict["Types"]:
             # Convert minidom Element to ElementTree Element
-            # Check if it's a minidom Element before converting
-            if isinstance(item, xml.dom.minidom.Element):
-                etree_element = convert_minidom_to_etree(item)
-            elif isinstance(item, ET.Element):
-                etree_element = item  # Already an ElementTree Element
+            etree_element = convert_minidom_to_etree(item)
+            self.xml_builder.add_object_type(etree_element)
+        
+        # Split ExportedObjects into chunks based on max_items_per_file
+        exported_objects = self.factory_copies_dict["ExportedObjects"]
+        total_items = len(exported_objects)
+        
+        if max_items_per_file is None or max_items_per_file >= total_items:
+            # Single file case
+            chunks = [exported_objects]
+            file_count = 1
+        else:
+            # Multiple files case - split into chunks
+            chunks = []
+            for i in range(0, total_items, max_items_per_file):
+                chunk = exported_objects[i:i + max_items_per_file]
+                chunks.append(chunk)
+            file_count = len(chunks)
+        
+        # Process each chunk and write to separate files
+        for file_index, chunk in enumerate(chunks):
+            # Convert items to ElementTree elements
+            etree_elements = []
+            for item in chunk:
+                # Check if it's a minidom Element before converting
+                if isinstance(item, xml.dom.minidom.Element):
+                    etree_element = convert_minidom_to_etree(item)
+                elif isinstance(item, ET.Element):
+                    etree_element = item  # Already an ElementTree Element
+                else:
+                    # Handle other types or raise an error
+                    raise TypeError(f"Unexpected element type: {type(item)}")
+                etree_elements.append(etree_element)
+                # report progress
+                progress = self.stdout_progress(progress, size)
+            
+            # Set (replace) the exported objects for this file
+            self.xml_builder.set_exported_objects(etree_elements)
+            
+            if print_result:
+                print(self.xml_builder.to_pretty_xml())
+            
+            if write_result:
+                # Generate output filename
+                if file_count > 1:
+                    # Multiple files: add suffix _1.xml, _2.xml, etc.
+                    base_name = self.xml_out_file.rsplit('.', 1)[0]  # Remove .xml extension
+                    extension = self.xml_out_file.rsplit('.', 1)[1] if '.' in self.xml_out_file else 'xml'
+                    output_file = f"{base_name}_{file_index + 1}.{extension}"
+                else:
+                    # Single file: use original filename
+                    output_file = self.xml_out_file
+                
+                if self.show_progress:
+                    print(f'\nWriting document to "{output_file}" ...')
+                
+                self.xml_builder.write_xml(output_file)
+        
+        if write_result and self.show_progress:
+            if file_count > 1:
+                print(f"\nDone. Created {file_count} files.\n")
             else:
-                # Handle other types or raise an error
-                raise TypeError(f"Unexpected element type: {type(item)}")
-            self.xml_builder.add_to_exported_objects(etree_element)
-            # report progress
-            progress = self.stdout_progress(progress, size)
-        # loop through dictionary keys for each element to insert children
-        # for node, elements in self.factory_copies_dict.items():
-        #     # create an empty child element inside root DOM Element ObjectSet
-        #     factory_element = self.factory_doc.createElement(node)
-        #     self.factory_doc.documentElement.appendChild(factory_element)
-        #     # self.doc_template.getElementsByTagName(self.doc_root_element_tagname)[0].appendChild()
-        #     # loop through elements and insert as children
-        #     for child_element in elements:
-        #         self.factory_doc.getElementsByTagName(node)[0].appendChild(
-        #             child_element
-        #         )
-        if print_result:
-            # print(self.factory_doc.toprettyxml(encoding="utf-8"))
-            # print(self.factory_doc)
-            print(self.xml_builder.to_pretty_xml())
-        if write_result:
-            if self.show_progress:
-                print('\nWriting document to "' + self.xml_out_file + '" ...')
-                self.xml_builder.write_xml(self.xml_out_file)
-            # with open(self.xml_out_file, "wb") as outfile:
-            #     outfile.write(self.factory_doc.toxml(encoding="utf-8"))
-            if self.show_progress:
                 print("\nDone.\n")
 
     def make_copies(self):
@@ -674,6 +711,20 @@ def template_folder_elements_list_of_lists(template_paths):
     if xl_out_file:
         wb.save(xl_out_file)
     return wb
+
+
+def calc_number_of_files_needed(items_list, max_items_per_file=None):
+    """
+    Calculate the number of files needed based on the number of items and max_items_per_file.
+    If max_items_per_file is None, return 1.
+    """
+    if max_items_per_file is None:
+        return 1
+    else:
+        num_files = len(items_list) // max_items_per_file
+        if len(items_list) % max_items_per_file != 0:
+            num_files += 1
+        return num_files
 
 
 # EXECUTE

@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2025-07-05
+
+### Added
+
+- Multi-file output support: `make_document()` now splits large datasets into multiple files based on `max_items_per_file` parameter
+- Automatic file naming with sequential suffixes (`_1.xml`, `_2.xml`, etc.) when creating multiple files
+- Enhanced test coverage for multi-file output validation
+
+### Changed
+
+- `make_document()` method now uses `set_exported_objects()` instead of `add_to_exported_objects()` to overwrite elements for multuple output file support
+- Types elements are now added once per document set rather than per file
+- Improved file generation logic to handle both single and multiple file scenarios
+
+### Fixed
+
+- Fixed file output naming to properly generate sequential files when `max_items_per_file` is specified
+- Improved progress reporting for multi-file operations
+
+### Technical
+
+- Enhanced test suite to validate proper file splitting and XML element counting
+- Better error handling for large dataset processing
+
 ## [0.2.0] - 2025-07-05
 
 ### Added

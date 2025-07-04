@@ -1,0 +1,1016 @@
+<?xml version="1.0" ?>
+<ObjectSet ExportMode="Special" Note="TypesFirst" SemanticsFilter="Special" Version="4.0.1.86">
+  <MetaInformation>
+    <ExportMode Value="Special"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="4.0.1.86"/>
+    <SourceVersion Value="4.0.1.86"/>
+    <ServerFullPath Value="/EBOApplicationFactory_v0.1"/>
+  </MetaInformation>
+  <Types>
+    <ObjectType Name="udt.dzocodd4o3kuldqbd74eaabx4i.qxhei5ymqe6q6vhihxqaoncy7l2lxsqr" DisplayName="" Description="" Base="tgml.MenuItem" Icon="" Abstract="0" Implements="" DefaultProperty="" Version="1">
+      <PropertyTab Name="BASIC">
+        <PropertyGroup Name="Menu">
+          <ObjectReference Name="MI0" DisplayName="MI0" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Scope="Sys" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.Object"/>
+            <InitReference/>
+          </ObjectReference>
+          <Parameter Name="MI0_Icon" DisplayName="MI0_Icon" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="1" RTWriteable="0" Unique="No" Copy="0" Nullable="1">
+            <Type Configurable="No" Value="system.pt.String"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="MultipleTrendLogList.gif"/>
+          </Parameter>
+          <Parameter Name="MI0_IsMenu" DisplayName="MI0_IsMenu" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Unique="No" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.pt.Boolean"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="0"/>
+          </Parameter>
+          <ObjectReference Name="MI1" DisplayName="MI1" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Scope="Sys" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.Object"/>
+            <InitReference/>
+          </ObjectReference>
+          <Parameter Name="MI1_Icon" DisplayName="MI1_Icon" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="1" RTWriteable="0" Unique="No" Copy="0" Nullable="1">
+            <Type Configurable="No" Value="system.pt.String"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="EventViewer.gif"/>
+          </Parameter>
+          <Parameter Name="MI1_IsMenu" DisplayName="MI1_IsMenu" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Unique="No" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.pt.Boolean"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="0"/>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+    </ObjectType>
+    <ObjectType Name="udt.dzocodd4o3kuldqbd74eaabx4i.qxhei5ymqe6q6vhihxqaoncy7l2lxsqr" DisplayName="" Description="" Base="tgml.MenuItem" Icon="" Abstract="0" Implements="" DefaultProperty="" Version="1">
+      <PropertyTab Name="BASIC">
+        <PropertyGroup Name="Menu">
+          <ObjectReference Name="MI0" DisplayName="MI0" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Scope="Sys" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.Object"/>
+            <InitReference/>
+          </ObjectReference>
+          <Parameter Name="MI0_Icon" DisplayName="MI0_Icon" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="1" RTWriteable="0" Unique="No" Copy="0" Nullable="1">
+            <Type Configurable="No" Value="system.pt.String"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="MultipleTrendLogList.gif"/>
+          </Parameter>
+          <Parameter Name="MI0_IsMenu" DisplayName="MI0_IsMenu" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Unique="No" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.pt.Boolean"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="0"/>
+          </Parameter>
+          <ObjectReference Name="MI1" DisplayName="MI1" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Scope="Sys" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.Object"/>
+            <InitReference/>
+          </ObjectReference>
+          <Parameter Name="MI1_Icon" DisplayName="MI1_Icon" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="1" RTWriteable="0" Unique="No" Copy="0" Nullable="1">
+            <Type Configurable="No" Value="system.pt.String"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="EventViewer.gif"/>
+          </Parameter>
+          <Parameter Name="MI1_IsMenu" DisplayName="MI1_IsMenu" Description="" Visibility="Hidden" Optional="0" ReadOnly="0" Static="0" RTWriteable="0" Unique="No" Copy="1" Nullable="1">
+            <Type Configurable="No" Value="system.pt.Boolean"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Value="0"/>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+    </ObjectType>
+  </Types>
+  <ExportedObjects>
+    <OI NAME="ICG-L05" TYPE="system.base.Folder">
+      <OI NAME="ICG-L05" TYPE="system.base.Folder">
+        <OI NAME="Variables" TYPE="system.base.Folder">
+          <OI NAME="DeviceTotalCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceTotalCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceOkCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceOkCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceFaultyCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceFaultyCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceCommissioningCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceCommissioningCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceTamperAlarmCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceTamperAlarmCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceTestingCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceTestingCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceUncommissionedCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L05_DeviceUncommissionedCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+        </OI>
+        <OI NAME="Trends" TYPE="system.base.Folder">
+          <OI NAME="Logs" TYPE="system.base.Folder">
+            <OI NAME="DeviceCommissioningCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceCommissioningCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceFaultyCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceFaultyCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceOkCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceOkCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTamperAlarmCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTamperAlarmCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTestingCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTestingCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTotalCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTotalCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceUncommissionedCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceUncommissionedCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+          </OI>
+          <OI NAME="Lists" TYPE="system.base.Folder">
+            <OI NAME="Device Counts" TYPE="trend.view.MultiTextualTrendView">
+              <OI NAME="DeviceCommissioningCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceCommissioningCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceFaultyCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceFaultyCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceOkCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceOkCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTamperAlarmCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTamperAlarmCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTestingCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTestingCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTotalCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTotalCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceUncommissionedCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceUncommissionedCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="Layout" TYPE="client.layout.GridViewSettings" flags="aggregated,hidden" hidden="1">
+                <PI Name="PropertiesPanelWidth" Value="0"/>
+                <OI NAME="ColumnSetting0" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Timestamp"/>
+                  <PI Name="Title" Value="Timestamp"/>
+                  <PI Name="Width" Value="119"/>
+                </OI>
+                <OI NAME="ColumnSetting1" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie1"/>
+                  <PI Name="Title" Value="DeviceCommissioningCount"/>
+                  <PI Name="VisiblePosition" Value="1"/>
+                  <PI Name="Width" Value="144"/>
+                </OI>
+                <OI NAME="ColumnSetting2" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie2"/>
+                  <PI Name="Title" Value="DeviceFaultyCount"/>
+                  <PI Name="VisiblePosition" Value="2"/>
+                  <PI Name="Width" Value="98"/>
+                </OI>
+                <OI NAME="ColumnSetting3" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie3"/>
+                  <PI Name="Title" Value="DeviceOkCount"/>
+                  <PI Name="VisiblePosition" Value="3"/>
+                  <PI Name="Width" Value="83"/>
+                </OI>
+                <OI NAME="ColumnSetting4" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie4"/>
+                  <PI Name="Title" Value="DeviceTamperAlarmCount"/>
+                  <PI Name="VisiblePosition" Value="4"/>
+                  <PI Name="Width" Value="135"/>
+                </OI>
+                <OI NAME="ColumnSetting5" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie5"/>
+                  <PI Name="Title" Value="DeviceTestingCount"/>
+                  <PI Name="VisiblePosition" Value="5"/>
+                  <PI Name="Width" Value="105"/>
+                </OI>
+                <OI NAME="ColumnSetting6" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie6"/>
+                  <PI Name="Title" Value="DeviceTotalCount"/>
+                  <PI Name="VisiblePosition" Value="6"/>
+                  <PI Name="Width" Value="93"/>
+                </OI>
+                <OI NAME="ColumnSetting7" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie7"/>
+                  <PI Name="Title" Value="DeviceUncommissionedCount"/>
+                  <PI Name="VisiblePosition" Value="7"/>
+                  <PI Name="Width" Value="153"/>
+                </OI>
+                <OI NAME="SortSetting0" TYPE="client.layout.SortSetting" flags="aggregated">
+                  <PI Name="FieldName" Value="Timestamp"/>
+                  <PI Name="SortDirection" Value="1"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI NAME="Charts" TYPE="system.base.Folder"/>
+          <OI NAME="Event View" TYPE="event.EventViewer">
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <PI Name="Operator" Value="0"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L05*"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI NAME="Menu" TYPE="udt.dzocodd4o3kuldqbd74eaabx4i.qxhei5ymqe6q6vhihxqaoncy7l2lxsqr">
+            <PI Name="MI0">
+              <Reference DeltaFilter="0" Object="../Lists/Device Counts" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MI1">
+              <Reference DeltaFilter="0" Object="../Event View" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+        </OI>
+        <OI NAME="Alarms" TYPE="system.base.Folder">
+          <OI DESCR="Fittings uncommissioned" NAME="DeviceUncommissionedCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceUncommissionedCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings being tested" NAME="DeviceTestingCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTestingCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings in tamper alarm" NAME="DeviceTamperAlarmCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTamperAlarmCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Faulty fittings" NAME="DeviceFaultyCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceFaultyCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings being commissioned" NAME="DeviceCommissioningCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceCommissioningCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI NAME="Alarm View" TYPE="alarm.AlarmViewer">
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Priority"/>
+                <PI Name="DisplayName" Value="Priority"/>
+                <PI Name="Operator" Value="0"/>
+                <PI Name="PropertyType" Value="alarm.pt.AlarmPriority"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+                  <PI Name="MaxValue" Value="20"/>
+                  <PI Name="MinValue" Value="0"/>
+                </OI>
+              </OI>
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <PI Name="Operator" Value="0"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L05*"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI DESCR="Common Alarm" NAME="Sum Alarm" TYPE="alarm.SumAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="10"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="10"/>
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="AlarmState" TYPE="event.filter.expression.Enum" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="AlarmState"/>
+                <PI Name="DisplayName" Value="Alarm state"/>
+                <PI Name="EnumType" Value="alarm.pt.AlarmState"/>
+                <OI NAME="1" TYPE="event.filter.expression.EnumValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="1"/>
+                </OI>
+              </OI>
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L05*"/>
+                </OI>
+              </OI>
+              <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Priority"/>
+                <PI Name="DisplayName" Value="Priority"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+                  <PI Name="MaxValue" Value="5"/>
+                  <PI Name="MinValue" Value="0"/>
+                </OI>
+              </OI>
+            </OI>
+            <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1"/>
+          </OI>
+          <OI DESCR="Devices with issues" NAME="DeviceNotOkCount" TYPE="alarm.OutOfReferenceRangeAlarm">
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="HighLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Device count mismatch"/>
+            <PI Name="HighLimitPriority" Value="4"/>
+            <PI Name="LowLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="LowLimitPriority" Value="4"/>
+            <PI Name="MonitoredVariable">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceOkCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L05 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <PI Name="SetpointReference" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTotalCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="TimeDelayToOffNormal" Value="30"/>
+          </OI>
+        </OI>
+        <OI NAME="Notifications" TYPE="system.base.Folder">
+          <OI NAME="Notification Report Template" TYPE="report.ReportTemplate">
+            <PI Name="FirstDayOfWeek" Value="1"/>
+            <PI Name="ReportText" Value="ICG-L05 Emergency and Exit Light Fittings Log  @(Device Counts)  End of report"/>
+            <PI Name="TimeZoneIndex" Value="79"/>
+            <OI NAME="Device Counts" TYPE="report.data.MultiLogListReportData" flags="aggregated" hidden="1">
+              <PI Name="MultiLogListReference">
+                <Reference DeltaFilter="0" Object="../../../Trends/Lists/Device Counts" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="ReportTimeRange" Value="5"/>
+              <PI Name="Template" Value="Timestamp - TotalCount - OkCount - CommissioningCount - FaultyCount - TamperAlarmCount - TestingCount - UncommissionedCount ======================================================================== @(Timestamp)  - @(DeviceTotalCount) - @(DeviceOkCount) - @(DeviceCommissioningCount) - @(DeviceFaultyCount) - @(DeviceTamperAlarmCount) - @(DeviceTestingCount) - @(DeviceUncommissionedCount)"/>
+            </OI>
+          </OI>
+          <OI NAME="Notification Schedule" TYPE="schedule.NSPDigitalSchedule">
+            <PI Name="SynchSource">
+              <Reference DeltaFilter="0" Object="../../../_Common/Schedules/Notification Schedule" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <OI DESCR="Effective Period" NAME="EP" TYPE="system.bacnetcommon.DateRange" declared="1" hidden="1">
+              <PI Name="EndDayOfMonth" Value="255"/>
+              <PI Name="EndDayOfWeek" Value="255"/>
+              <PI Name="StartDayOfMonth" Value="255"/>
+              <PI Name="StartDayOfWeek" Value="255"/>
+            </OI>
+            <OI DESCR="Monday" NAME="WS00001" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1"/>
+            <OI DESCR="Tuesday" NAME="WS00002" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="2"/>
+            </OI>
+            <OI DESCR="Wednesday" NAME="WS00003" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="3"/>
+            </OI>
+            <OI DESCR="Thursday" NAME="WS00004" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="4"/>
+            </OI>
+            <OI DESCR="Friday" NAME="WS00005" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="5"/>
+            </OI>
+            <OI DESCR="Saturday" NAME="WS00006" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="6"/>
+            </OI>
+            <OI DESCR="Sunday" NAME="WS00007" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="7"/>
+            </OI>
+          </OI>
+          <OI NAME="Variable Triggered Notification" TYPE="notification.VariableTriggeredNotification">
+            <PI Name="NotificationText" Value="Report: @(Report)"/>
+            <PI Name="Report">
+              <Reference DeltaFilter="0" Object="../Notification Report Template" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="TriggerCondition" Value="1"/>
+            <PI Name="TriggerVariable">
+              <Reference DeltaFilter="0" Object="../Notification Schedule" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <OI NAME="Email" TYPE="notification.EmailNotifier" flags="aggregated" hidden="1">
+              <PI Name="AttachmentFilename" Value="Attachment.txt"/>
+              <PI Name="Subject" Value="Queen's Wharf iBAMS - ICG-L05 Emergency and Exit Light Fittings Log"/>
+              <PI Name="UsersAndGroups">
+                <Reference DeltaFilter="0" Locked="1" Object="~/System/Domains/Local/Groups/Emergency Lighting Report Recipients" Retransmit="0" TransferRate="10"/>
+              </PI>
+            </OI>
+          </OI>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="ICG-L06" TYPE="system.base.Folder">
+      <OI NAME="ICG-L06" TYPE="system.base.Folder">
+        <OI NAME="Variables" TYPE="system.base.Folder">
+          <OI NAME="DeviceTotalCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceTotalCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceOkCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceOkCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceFaultyCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceFaultyCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceCommissioningCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceCommissioningCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceTamperAlarmCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceTamperAlarmCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceTestingCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceTestingCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="DeviceUncommissionedCount" TYPE="server.point.IV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../_Common/Programs/external_bindings_ICG" Property="ICG_L06_DeviceUncommissionedCount" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+        </OI>
+        <OI NAME="Trends" TYPE="system.base.Folder">
+          <OI NAME="Logs" TYPE="system.base.Folder">
+            <OI NAME="DeviceCommissioningCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceCommissioningCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceFaultyCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceFaultyCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceOkCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceOkCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTamperAlarmCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTamperAlarmCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTestingCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTestingCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceTotalCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceTotalCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+            <OI NAME="DeviceUncommissionedCount" TYPE="trend.TLogChangeOfValue">
+              <PI Name="Enabled" Value="1"/>
+              <PI Name="LogArray" Unit="0x10001"/>
+              <PI Name="LogPoint" Unit="0x10001">
+                <Reference DeltaFilter="0" Object="../../../Variables/DeviceUncommissionedCount" Property="Value" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="MeterEndTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterStartTime" Value="Tx0605616fdae051b0"/>
+              <PI Name="MeterTime" Value="Tx0605616fdaf3dab0"/>
+              <PI Name="StartTime" Value="Tx0605616fdac8e1b0"/>
+            </OI>
+          </OI>
+          <OI NAME="Lists" TYPE="system.base.Folder">
+            <OI NAME="Device Counts" TYPE="trend.view.MultiTextualTrendView">
+              <OI NAME="DeviceCommissioningCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceCommissioningCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceFaultyCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceFaultyCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceOkCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceOkCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTamperAlarmCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTamperAlarmCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTestingCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTestingCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceTotalCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceTotalCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="DeviceUncommissionedCount" TYPE="trend.view.MultiTextualTrendSeriesProperties" hidden="1">
+                <PI Name="CustomCalculationPeriodStart" Value="Tx06055217803800b0"/>
+                <PI Name="DisplayLog">
+                  <Reference DeltaFilter="0" Object="../../../Logs/DeviceUncommissionedCount" Retransmit="0" TransferRate="10"/>
+                </PI>
+              </OI>
+              <OI NAME="Layout" TYPE="client.layout.GridViewSettings" flags="aggregated,hidden" hidden="1">
+                <PI Name="PropertiesPanelWidth" Value="0"/>
+                <OI NAME="ColumnSetting0" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Timestamp"/>
+                  <PI Name="Title" Value="Timestamp"/>
+                  <PI Name="Width" Value="119"/>
+                </OI>
+                <OI NAME="ColumnSetting1" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie1"/>
+                  <PI Name="Title" Value="DeviceCommissioningCount"/>
+                  <PI Name="VisiblePosition" Value="1"/>
+                  <PI Name="Width" Value="144"/>
+                </OI>
+                <OI NAME="ColumnSetting2" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie2"/>
+                  <PI Name="Title" Value="DeviceFaultyCount"/>
+                  <PI Name="VisiblePosition" Value="2"/>
+                  <PI Name="Width" Value="98"/>
+                </OI>
+                <OI NAME="ColumnSetting3" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie3"/>
+                  <PI Name="Title" Value="DeviceOkCount"/>
+                  <PI Name="VisiblePosition" Value="3"/>
+                  <PI Name="Width" Value="83"/>
+                </OI>
+                <OI NAME="ColumnSetting4" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie4"/>
+                  <PI Name="Title" Value="DeviceTamperAlarmCount"/>
+                  <PI Name="VisiblePosition" Value="4"/>
+                  <PI Name="Width" Value="135"/>
+                </OI>
+                <OI NAME="ColumnSetting5" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie5"/>
+                  <PI Name="Title" Value="DeviceTestingCount"/>
+                  <PI Name="VisiblePosition" Value="5"/>
+                  <PI Name="Width" Value="105"/>
+                </OI>
+                <OI NAME="ColumnSetting6" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie6"/>
+                  <PI Name="Title" Value="DeviceTotalCount"/>
+                  <PI Name="VisiblePosition" Value="6"/>
+                  <PI Name="Width" Value="93"/>
+                </OI>
+                <OI NAME="ColumnSetting7" TYPE="client.layout.ColumnSetting" flags="aggregated" hidden="1">
+                  <PI Name="FieldName" Value="Serie7"/>
+                  <PI Name="Title" Value="DeviceUncommissionedCount"/>
+                  <PI Name="VisiblePosition" Value="7"/>
+                  <PI Name="Width" Value="153"/>
+                </OI>
+                <OI NAME="SortSetting0" TYPE="client.layout.SortSetting" flags="aggregated">
+                  <PI Name="FieldName" Value="Timestamp"/>
+                  <PI Name="SortDirection" Value="1"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI NAME="Charts" TYPE="system.base.Folder"/>
+          <OI NAME="Event View" TYPE="event.EventViewer">
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <PI Name="Operator" Value="0"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L06*"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI NAME="Menu" TYPE="udt.dzocodd4o3kuldqbd74eaabx4i.qxhei5ymqe6q6vhihxqaoncy7l2lxsqr">
+            <PI Name="MI0">
+              <Reference DeltaFilter="0" Object="../Lists/Device Counts" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MI1">
+              <Reference DeltaFilter="0" Object="../Event View" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+        </OI>
+        <OI NAME="Alarms" TYPE="system.base.Folder">
+          <OI DESCR="Fittings uncommissioned" NAME="DeviceUncommissionedCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceUncommissionedCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings being tested" NAME="DeviceTestingCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTestingCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings in tamper alarm" NAME="DeviceTamperAlarmCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTamperAlarmCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Faulty fittings" NAME="DeviceFaultyCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceFaultyCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI DESCR="Fittings being commissioned" NAME="DeviceCommissioningCount" TYPE="alarm.MultiStateAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="4"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="MonitoredVariable" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceCommissioningCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <OI NAME="Value1" TYPE="alarm.values.Range" flags="aggregated" hidden="1">
+              <PI Name="FirstValue" Value="1"/>
+              <PI Name="LastValue" Value="9999"/>
+            </OI>
+          </OI>
+          <OI NAME="Alarm View" TYPE="alarm.AlarmViewer">
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Priority"/>
+                <PI Name="DisplayName" Value="Priority"/>
+                <PI Name="Operator" Value="0"/>
+                <PI Name="PropertyType" Value="alarm.pt.AlarmPriority"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+                  <PI Name="MaxValue" Value="20"/>
+                  <PI Name="MinValue" Value="0"/>
+                </OI>
+              </OI>
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <PI Name="Operator" Value="0"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L06*"/>
+                </OI>
+              </OI>
+            </OI>
+          </OI>
+          <OI DESCR="Common Alarm" NAME="Sum Alarm" TYPE="alarm.SumAlarm">
+            <PI Name="AlarmMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="AlarmPriority" Value="10"/>
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="10"/>
+            <OI NAME="Filter" TYPE="event.filter.Filter" declared="1" hidden="1">
+              <OI NAME="AlarmState" TYPE="event.filter.expression.Enum" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="AlarmState"/>
+                <PI Name="DisplayName" Value="Alarm state"/>
+                <PI Name="EnumType" Value="alarm.pt.AlarmState"/>
+                <OI NAME="1" TYPE="event.filter.expression.EnumValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="1"/>
+                </OI>
+              </OI>
+              <OI NAME="Source" TYPE="event.filter.expression.Text" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Source"/>
+                <PI Name="DisplayName" Value="Source"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.TextValue" flags="aggregated" hidden="1">
+                  <PI Name="Value" Value="*Emergency and Exit Lighting*ICG-L06*"/>
+                </OI>
+              </OI>
+              <OI NAME="Priority" TYPE="event.filter.expression.ValueRange" flags="aggregated" hidden="1">
+                <PI Name="Column" Value="Priority"/>
+                <PI Name="DisplayName" Value="Priority"/>
+                <OI NAME="Value1" TYPE="event.filter.expression.ValueRangeValue" flags="aggregated" hidden="1">
+                  <PI Name="MaxValue" Value="5"/>
+                  <PI Name="MinValue" Value="0"/>
+                </OI>
+              </OI>
+            </OI>
+            <OI NAME="Attachment" TYPE="alarm.attachments.Attachment" flags="aggregated" hidden="1"/>
+          </OI>
+          <OI DESCR="Devices with issues" NAME="DeviceNotOkCount" TYPE="alarm.OutOfReferenceRangeAlarm">
+            <PI Name="Category">
+              <Reference DeltaFilter="0" Locked="1" Object="~/System/Alarm Control Panel/Alarm Handling/Categories/Emergency and Exit Lighting" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="HighLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Device count mismatch"/>
+            <PI Name="HighLimitPriority" Value="4"/>
+            <PI Name="LowLimitMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR)"/>
+            <PI Name="LowLimitPriority" Value="4"/>
+            <PI Name="MonitoredVariable">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceOkCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="NOTE1" Value="ICG-L06 Emergency Lighting"/>
+            <PI Name="ResetMessage" Value="@(SourceObject-&gt;NOTE1) - @(SourceObject-&gt;DESCR) Returned to Normal"/>
+            <PI Name="ResetPriority" Value="4"/>
+            <PI Name="SetpointReference" Unit="0x10001">
+              <Reference DeltaFilter="0" Object="../../Variables/DeviceTotalCount" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="TimeDelayToOffNormal" Value="30"/>
+          </OI>
+        </OI>
+        <OI NAME="Notifications" TYPE="system.base.Folder">
+          <OI NAME="Notification Report Template" TYPE="report.ReportTemplate">
+            <PI Name="FirstDayOfWeek" Value="1"/>
+            <PI Name="ReportText" Value="ICG-L06 Emergency and Exit Light Fittings Log  @(Device Counts)  End of report"/>
+            <PI Name="TimeZoneIndex" Value="79"/>
+            <OI NAME="Device Counts" TYPE="report.data.MultiLogListReportData" flags="aggregated" hidden="1">
+              <PI Name="MultiLogListReference">
+                <Reference DeltaFilter="0" Object="../../../Trends/Lists/Device Counts" Retransmit="0" TransferRate="10"/>
+              </PI>
+              <PI Name="ReportTimeRange" Value="5"/>
+              <PI Name="Template" Value="Timestamp - TotalCount - OkCount - CommissioningCount - FaultyCount - TamperAlarmCount - TestingCount - UncommissionedCount ======================================================================== @(Timestamp)  - @(DeviceTotalCount) - @(DeviceOkCount) - @(DeviceCommissioningCount) - @(DeviceFaultyCount) - @(DeviceTamperAlarmCount) - @(DeviceTestingCount) - @(DeviceUncommissionedCount)"/>
+            </OI>
+          </OI>
+          <OI NAME="Notification Schedule" TYPE="schedule.NSPDigitalSchedule">
+            <PI Name="SynchSource">
+              <Reference DeltaFilter="0" Object="../../../_Common/Schedules/Notification Schedule" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <OI DESCR="Effective Period" NAME="EP" TYPE="system.bacnetcommon.DateRange" declared="1" hidden="1">
+              <PI Name="EndDayOfMonth" Value="255"/>
+              <PI Name="EndDayOfWeek" Value="255"/>
+              <PI Name="StartDayOfMonth" Value="255"/>
+              <PI Name="StartDayOfWeek" Value="255"/>
+            </OI>
+            <OI DESCR="Monday" NAME="WS00001" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1"/>
+            <OI DESCR="Tuesday" NAME="WS00002" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="2"/>
+            </OI>
+            <OI DESCR="Wednesday" NAME="WS00003" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="3"/>
+            </OI>
+            <OI DESCR="Thursday" NAME="WS00004" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="4"/>
+            </OI>
+            <OI DESCR="Friday" NAME="WS00005" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="5"/>
+            </OI>
+            <OI DESCR="Saturday" NAME="WS00006" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="6"/>
+            </OI>
+            <OI DESCR="Sunday" NAME="WS00007" TYPE="system.schedulecommon.propertytypes.DailySchedule" declared="1" hidden="1">
+              <PI Name="DayOfWeek" Value="7"/>
+            </OI>
+          </OI>
+          <OI NAME="Variable Triggered Notification" TYPE="notification.VariableTriggeredNotification">
+            <PI Name="NotificationText" Value="Report: @(Report)"/>
+            <PI Name="Report">
+              <Reference DeltaFilter="0" Object="../Notification Report Template" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <PI Name="TriggerCondition" Value="1"/>
+            <PI Name="TriggerVariable">
+              <Reference DeltaFilter="0" Object="../Notification Schedule" Property="Value" Retransmit="0" TransferRate="10"/>
+            </PI>
+            <OI NAME="Email" TYPE="notification.EmailNotifier" flags="aggregated" hidden="1">
+              <PI Name="AttachmentFilename" Value="Attachment.txt"/>
+              <PI Name="Subject" Value="Queen's Wharf iBAMS - ICG-L06 Emergency and Exit Light Fittings Log"/>
+              <PI Name="UsersAndGroups">
+                <Reference DeltaFilter="0" Locked="1" Object="~/System/Domains/Local/Groups/Emergency Lighting Report Recipients" Retransmit="0" TransferRate="10"/>
+              </PI>
+            </OI>
+          </OI>
+        </OI>
+      </OI>
+    </OI>
+  </ExportedObjects>
+</ObjectSet>
