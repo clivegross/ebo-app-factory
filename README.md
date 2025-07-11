@@ -12,6 +12,7 @@
 - [Build from template- Multiple templates](#advanced-usage)
 - [Building from scratch](#building-from-scratch-programmatically)
 - [Build Schedules](#eboschedulebuilder-usage)
+- [Build HTML Files](#ebohtmlfilebuilder-usage)
 - [Build Modbus stuff](#ebomodbusbuilder-usage)
 - [Build Alarms and Alarm Views](#eboalarmbuilder-usage)
 - [Contributing](#contributing)
@@ -384,6 +385,125 @@ print(xml_str)
 ```
 
 This will generate an EBO-compliant XML file with your schedule and special events, ready for import into EBO.
+
+### EBOHTMLFileBuilder Usage
+
+The `EBOHTMLFileBuilder` class extends `EBOXMLBuilder` and provides methods for building and encoding HTML file objects into EBO-compliant XML, ready for import. It handles HTML compression/decompression and creates proper HTML file objects for import into EBO.
+
+![EBO HTML Files](images/ebo_html_files.png)
+
+#### Key Features
+
+- **HTML Compression**: Automatically compresses HTML content using gzip and base64 encoding for EBO compatibility
+- **Version-aware UID Generation**: Uses appropriate UID namespaces based on EBO version (v5.0.3.117 vs v6.0.4.90+)
+- **CDATA Support**: Ensures FileContents are properly wrapped in CDATA sections in the XML output
+- **Round-trip Validation**: Maintains HTML content integrity through compression/decompression cycles
+
+#### Example
+
+```python
+from ebo_app_factory.html_file_builder import EBOHTMLFileBuilder
+
+# Create a builder instance
+builder = EBOHTMLFileBuilder(ebo_version="6.0.4.90", server_full_path="/Server 1")
+
+# Define HTML content
+html_content = """<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera BLDG1-L01-001</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { padding: 10px; margin: 5px; border-radius: 5px; }
+        .normal { background-color: #d4edda; color: #155724; }
+        .alarm { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Camera BLDG1-L01-001</h1>
+    <video id="player-video" autoplay playsinline muted controls></video>
+    <div id="stream-info-line">
+    <button id="refresh-btn" onclick="refreshConnection()" style="margin-right: 8px; padding: 2px 6px; background-color: #6c757d; color: white; border: none; border-radius: 2px; cursor: pointer; font-size: 10px;">🔄</button>
+    <span id="stream-name-display">Camera BLDG1-L01-001</span> |
+    <span id="status-display">Checking...</span> |
+    <span id="bytes-out-rate-display">BytesOutRate: Loading...</span> |
+  </div>
+  <script>
+    // javascript video player and stuff in here...
+  </script>
+</body>
+</html>"""
+
+# Create an HTML file object and object type
+html_obj, object_type = create_html_file_with_type(
+    name="Camera BLDG1-L01-001",
+    html_content=html_content,
+    description="camera live stream web player",
+    note1="BLDG1-L01-001"
+)
+
+# Add both object and object type to the object set
+builder.add_to_exported_objects(html_obj)
+builder.add_to_exported_types(object_type)
+
+# OR complete the above 3 steps all in one
+html_obj, object_type = builder.create_and_add_html_file(
+    name="Camera BLDG1-L01-002",
+    html_content=html_content,
+    description="camera live stream web player",
+    note1="BLDG1-L01-002"
+)
+
+# Write the XML to a file
+builder.write_xml("html_files.xml")
+
+# Or get the pretty-printed XML as a string
+xml_str = builder.to_pretty_xml()
+print(xml_str)
+```
+
+#### Loading HTML from File
+
+You can also load HTML content from external files:
+
+```python
+# Load HTML from file
+html_obj, object_type = create_and_add_html_file_from_file(
+    name="Camera BLDG1-L01-001",
+    html_file_path="./path/to/Camera BLDG1-L01-001 stream.html",
+    description="camera live stream web player",
+    note1="BLDG1-L01-001"
+)
+
+# Write the XML to a file
+builder.write_xml("html_files.xml")
+```
+
+#### Batch Processing with Excel
+
+For creating multiple HTML files from a list (e.g., in an Excel file):
+
+```python
+import pandas as pd
+
+# Load HTML file data from Excel
+df = pd.read_excel("html_files.xlsx")
+
+for _, row in df.iterrows():
+
+    # Create HTML file object
+    html_file = builder.create_and_add_html_file_from_file(
+        name=row['name'],
+        html_file_path=row['html_file_path'],
+        description=row['description'],
+        note1=row['note1'],
+        note2=row['note2']
+    )
+
+
+# Write all HTML files to XML
+builder.write_xml("batch_html_files.xml")
+```
 
 ### EBOAlarmBuilder Usage
 

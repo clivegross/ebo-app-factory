@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<ObjectSet ExportMode="Special" Note="TypesFirst" SemanticsFilter="Special" Version="5.0.3.117">
+  <MetaInformation>
+    <ExportMode Value="Special"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="5.0.3.117"/>
+    <SourceVersion Value="5.0.3.117"/>
+    <ServerFullPath Value="/Server 1"/>
+  </MetaInformation>
+  <Types>
+    <ObjectType Name="udt.nulr4l2rmpbelizyq3aoiagyee.ny4ewumfh76mn5gvwun6ohovbcuvs6ue" DisplayName="" Description="" Base="client.HTML" Icon="" Abstract="0" Implements="" DefaultProperty="" Version="1">
+      <PropertyTab Name="BASIC">
+        <PropertyGroup Name="Config">
+          <Parameter Name="File" DisplayName="File" Description="" Visibility="Normal" Optional="0" ReadOnly="0" Static="1" RTWriteable="0" Unique="No" Copy="0" Nullable="0">
+            <Type Configurable="No" Value="system.pt.file.HTMLFile"/>
+            <Unit Configurable="No" Value="0x10001"/>
+            <InitValue Null="0">
+              <FileContents Size="852"><![CDATA[H4sIAHNTb2gC/4VUbW/TMBD+zq84gpBAWtYk2ugU0kioA/FhGpPokPh4i53EIrEj2+kLUf8Tv4Ffhp00TboUUCv1/Nzd8/jOd41e3n5Zrr4/fIRcl0X8IrI/UCDPFg7lTvwCIMopEmsYs6QaIclRKqoXzuPqk3vjwGzs5FjShbNmdFMJqR1IBNeUm+ANIzpfELpmCXXbwwUwzjTDwlUJFnThX3oDmWa6oHHTPGBGV9be76NZB3YBSu96G+BJkB00hwNAakTdFEtW7EL4II3EBSjkylVUsvT9Ma5EmTEeQuBV2wF9wuRHJkXNiZuIQsgQXqWe/fQh+8PvpS0OGadypF3itisvhHfeCW+v5gHWWpzTC2GTM00HV4WEMJ5NbigkodKVSFitQrg+9W1dlSMRG6sUVFvrBpk94RvvAg7fS//tpBilUddqVMlR3P+X+NW5Em0GeAOu6Va7WLDM+BIzDlRO5AUvTCdH8meegVxRQnCg7XH/+noeXE0p0/T/nOkNmZ/jnAd+coZzjUVNn4+aYj+peaOTVrSODWVZrkPTs4JMJTxvjklyKhHNjoMdzfrNi+x8H+aesDUkBSq1cI7j5/R7EOW+2ZnbdsnuzSbapTFQ761iszZS8Cy+EwlqJnho9VoEmqYHbVZ1JumWqkSyapI3wg+pfe7osv14NV9bY2nR/d6Ju2N4dFgGkzZw5EG8rKU0UwPfbPOVKSkY3W5Fy4pKkyrNG0SqQt5Ltm/lmIaMQiy9jYnh96/laZmf65IRpnd/Y+n9A8XrU4I7VBoeK4Ka2nrssTs964q5/r3Qk0KaxqL+8+53cDCCDw2yRjcYhqj99/4DwQZhQs4FAAA=]]></FileContents>
+            </InitValue>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+    </ObjectType>
+  </Types>
+  <ExportedObjects>
+    <OI NAME="BASIC_TEST_HTML" TYPE="udt.nulr4l2rmpbelizyq3aoiagyee.ny4ewumfh76mn5gvwun6ohovbcuvs6ue" DESCR="{{Description}}" NOTE1="{{Note1}}" NOTE2="{{Note2}}"/>
+  </ExportedObjects>
+</ObjectSet>

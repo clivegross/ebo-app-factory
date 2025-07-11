@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectSet ExportMode="Standard" Note="TypesFirst" SemanticsFilter="Standard" Version="5.0.3.117">
+  <MetaInformation>
+    <ExportMode Value="Standard"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="5.0.3.117"/>
+    <SourceVersion Value="5.0.3.117"/>
+    <ServerFullPath Value="/Server 1"/>
+  </MetaInformation>
+  <Types>
+    <ObjectType Name            = "udt.nulr4l2rmpbelizyq3aoiagyee.belbzmbu77bjyn7neam6zn6qvikkumei"
+                DisplayName     = ""
+                Description     = ""
+                Base            = "client.HTML"
+                Icon            = ""
+                Abstract        = "0"
+                Implements      = ""
+                DefaultProperty = ""
+                Version         = "1"
+                >
+      <PropertyTab Name = "BASIC">
+        <PropertyGroup Name = "Config">
+          <Parameter Name                  = "File"
+                     DisplayName           = "File"
+                     Description           = ""
+                     Visibility            = "Normal"
+                     Optional              = "0"
+                     ReadOnly              = "0"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.file.HTMLFile"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Null="0">
+              <FileContents Size="856"><![CDATA[H4sIAAAAAAAEAI1UbW/TMBD+jsR/OIKQQFrWJNooCmkk1IH4MI1JdEh8vMVOYpHYke30haj/id/AL8NOl8xrA0Kt1Lt77p578V2TF1dflqvvtx+h1HWVPn+W2F+okBcLj3LPWACSkiLpJSPXVCNkJUpF9cK7W33y33kwe4JyrOnCWzO6aYTUHmSCa8qN94YRXS4IXbOM+r1yBowzzbDyVYYVXYTngcOmma5o2nW3WNCVlff7ZHYwPngovRsVgHtBdtANGkBuEvs51qzaxfBBmjRnoJArX1HJ8vePjjXKgvEYoqDZOuZ7zH4UUrSc+JmohIzhZR7Yz+izH4Rz2yQyTqVbQI3bQ58xvA2ecg8pA8BWi8mkMWxKpqmDNUgI48VpoUISKn2JhLUqhssjcOurEonY2GxRs7U4yOIeXwdn8PA9D99MNKU06la5HY0VhP+s4GKyVxsDgQNoutU+VqwwYGZWhMqJIgSvzFzdIibehVxQQtChHoDw8nIeXUzR5vl/8ObvyHySdx6F2STvGquWnmyhYj+pebanc+mRDWVFqWMzwYpM5AmCOWbZcZ5k9rj5yWy8z8RewHAbhK0hq1CphTcupzfeSlKG5rKu+lu8MQdrT8uYRrhJzXFJwYv0WmSomeCxTdpboOsGow1rpqKuqMoka04CHfsQO0Y7FQ+b133thaW17vdeelDjEbAcJsxlKaN02Upp1gm+2bdQprHILXFF64ZKEy3NkySqQT5k7d/OM3NxXGwG65PC71/Lo2Y/tzUjTO/+RjPgjxyvjhiuUWm4awhqapuy6kE7GY7p4Ubo0266zprDk4c42CPXPozKSg+bYtgOf/x/AB/HkCcKBgAA]]>
+              </FileContents>
+            </InitValue>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+
+
+    </ObjectType>
+
+  </Types>
+<ExportedObjects>
+  <OI NAME="HTML" TYPE="udt.nulr4l2rmpbelizyq3aoiagyee.belbzmbu77bjyn7neam6zn6qvikkumei"/>
+</ExportedObjects>
+
+</ObjectSet>

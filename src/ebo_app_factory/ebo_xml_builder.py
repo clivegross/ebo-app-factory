@@ -15,6 +15,7 @@ class EBOXMLBuilder:
             <SourceVersion Value="6.0.4.90"/>
             <ServerFullPath Value="/Server 1"/>
         </MetaInformation>
+        <Types />
         <ExportedObjects/>
         </ObjectSet>
     """
@@ -30,13 +31,14 @@ class EBOXMLBuilder:
     ):
         self._ebo_version = ebo_version
         self._server_full_path = server_full_path
-        self.object_types = ET.Element("Types")  # Placeholder for Types
+        # Note: object_types will be set in _create_object_set()
         self.exported_objects = ET.Element(
             "ExportedObjects"
         )  # Placeholder for ExportedObjects
         # ExportMode can be "Standard" or "Special"
         self.export_mode = export_mode
         self.object_set = self._create_object_set()
+        # object_types is now set by _create_object_set()
 
     @property
     def ebo_version(self):
@@ -75,8 +77,16 @@ class EBOXMLBuilder:
         )
         self._create_meta_information()
         object_set.append(self.meta_information)
-        object_set.append(self.object_types)  # Add Types section
+
+        # Create Types element and add it to object_set
+        types_element = ET.Element("Types")
+        object_set.append(types_element)  # Add Types section
+
         object_set.append(self.exported_objects)  # Reuse existing ExportedObjects
+
+        # Set object_types to reference the Types element we just created
+        self.object_types = types_element
+
         return object_set
 
     def _create_meta_information(self):
@@ -161,15 +171,9 @@ class EBOXMLBuilder:
         Parameters:
             element (Element): An XML element representing the object type to add.
         """
-        types_element = self.object_set.find("Types")
-        if types_element is not None:
-            # Just append to existing Types element
-            types_element.append(element)
-        else:
-            # Create Types element if it doesn't exist
-            types_element = ET.Element("Types")
-            types_element.append(element)
-            self.object_set.append(types_element)
+        # Since self.object_types now references the Types element in self.object_set,
+        # they are always in sync
+        self.object_types.append(element)
 
     def add_to_exported_objects(self, elements):
         """
@@ -181,10 +185,8 @@ class EBOXMLBuilder:
             elements = [elements]
         for e in elements:
             self.exported_objects.append(e)
-        # Remove if exists and re-append to end
-        if self.exported_objects in self.object_set:
-            self.object_set.remove(self.exported_objects)
-        self.object_set.append(self.exported_objects)
+        # No need to remove and re-append since self.exported_objects
+        # is already part of self.object_set
 
     def reset_exported_objects(self):
         """
